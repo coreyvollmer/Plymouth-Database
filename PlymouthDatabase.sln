@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PlymouthDatabase", "PlymouthDatabase\PlymouthDatabase.vbproj", "{EAA2F955-3A02-45CF-8AA2-1D851BF925BE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F9086002-E2C3-4040-931C-E3BC1C2D4947}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EAA2F955-3A02-45CF-8AA2-1D851BF925BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAA2F955-3A02-45CF-8AA2-1D851BF925BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAA2F955-3A02-45CF-8AA2-1D851BF925BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAA2F955-3A02-45CF-8AA2-1D851BF925BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FF5EF8AC-5CA1-4110-A710-C1A4282F3664}
+	EndGlobalSection
+EndGlobal
