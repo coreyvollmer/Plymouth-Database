@@ -17,7 +17,7 @@ Module modMain
     'Public databaseRoot2 As String = "\\PCSVR\Shared\db\"
     Public acctFilePath As String = databaseRoot + "Accounts.dat"
     Public shiftLogPath As String = databaseRoot + "Shift Logs\"
-    Public currentID As Integer
+    Public currentID As Integer 'id of currently logged in user
     Public saveMsger As SaveMessageHandler
 
     Public shift1Seen, shift2Seen, shift3Seen As Boolean
@@ -445,6 +445,7 @@ Module modMain
         fileReader.Close()
     End Sub
 
+    'Empty??
     Public Sub ClearAllLogs()
         FrmMain.txtMorning1.Text = ""
         FrmMain.tabMorning1.Text = "Day Log"
@@ -474,7 +475,8 @@ Module modMain
 
     'Takes array of file names, and determines count for each time of day section
     Public Function GetShiftFileCount(files As String()) As Integer()
-        If debug Then
+        Dim consoleDebug As Boolean = False 'Sub debugger
+        If consoleDebug Then
             Console.WriteLine("Counting logs for selected day... Time: " + CStr(timeKeeper.GetTime) + "ms")
         End If
 
@@ -492,7 +494,7 @@ Module modMain
             End If
         Next
 
-        If debug Then
+        If consoleDebug Then
             Console.Write("Found " + CStr(secFileCount(0)) + " Overnight Files, ")
             Console.Write("Found " + CStr(secFileCount(1)) + " Morning files, and ")
             Console.WriteLine("Found " + CStr(secFileCount(2)) + " Evening Files.")
@@ -502,10 +504,10 @@ Module modMain
 
     'Fills log text boxes for date passed into argument
     Public Sub FillShiftLogs(day As String)
-        If debug Then
+        Dim consoleDebug As Boolean = False 'Sub debugger
+        If consoleDebug Then
             Console.WriteLine("Filling shift logs with data..." + CStr(timeKeeper.GetTime) + "ms")
         End If
-
         Dim monthDayYear As String() = day.Split(CType("/", Char()))
         Dim fullFilePath As String = shiftLogPath + monthDayYear(2) + "\" + monthDayYear(0) + "\" + monthDayYear(1) + "\"
         CheckDirectory(monthDayYear) ' Make sure directories are in place
@@ -520,7 +522,6 @@ Module modMain
                 Threading.Thread.Sleep(tick) : Application.DoEvents()
             End Try
         End While
-
         Dim tabCounter(0 To 2) As Integer
         Dim filledCounter(0 To 2) As Integer
         For i As Integer = 0 To 2
@@ -543,7 +544,41 @@ Module modMain
                         Threading.Thread.Sleep(tick) : Application.DoEvents()
                     End Try
                 End While
-                tabID = file.Substring(file.Length - 6, 2)
+                tabID = file.Substring(file.Length - 6, 2) 'gets tab id from filename, dynamic to length. do not change file naming convention
+
+                If file.Contains("Night") Then
+                    Console.WriteLine("Filling a night tab")
+                    If CInt(tabID) = currentID Then
+                        userHasTab(0) = True
+                        Console.WriteLine("has night tab")
+                    End If
+                    Select Case filledCounter(2)
+                        Case 0
+                            FrmMain.txtNight1.Text = crypto.DecryptData(fileReader.ReadToEnd)
+                            FrmMain.tabNight1.Text = tabID + " " + userList(CInt(tabID)).GetInitials
+                            filledCounter(2) = filledCounter(2) + 1
+                            modifyTextControlHandler(0, tabID)
+                            filled = True
+                        Case 1
+                            FrmMain.txtNight2.Text = crypto.DecryptData(fileReader.ReadToEnd)
+                            FrmMain.tabNight2.Text = tabID + " " + userList(CInt(tabID)).GetInitials
+                            filledCounter(2) = filledCounter(2) + 1
+                            filled = True
+                        Case 2
+                            FrmMain.txtNight3.Text = crypto.DecryptData(fileReader.ReadToEnd)
+                            FrmMain.tabNight3.Text = tabID + " " + userList(CInt(tabID)).GetInitials
+                            filledCounter(2) = filledCounter(2) + 1
+                            filled = True
+
+                        Case 3
+                            FrmMain.txtNight4.Text = crypto.DecryptData(fileReader.ReadToEnd)
+                            FrmMain.tabNight4.Text = tabID + " " + userList(CInt(tabID)).GetInitials
+                            filledCounter(2) = filledCounter(2) + 1
+                            filled = True
+                    End Select
+                End If
+
+
                 If file.Contains("Morning") Then
                     Console.WriteLine("Filling a morning tab")
                     If CInt(tabID) = currentID Then
@@ -554,7 +589,9 @@ Module modMain
                             FrmMain.txtMorning1.Text = crypto.DecryptData(fileReader.ReadToEnd)
                             FrmMain.tabMorning1.Text = tabID + " " + userList(CInt(tabID)).GetInitials
                             filledCounter(0) = filledCounter(0) + 1
+
                             filled = True
+
                         Case 1
                             FrmMain.txtMorning2.Text = crypto.DecryptData(fileReader.ReadToEnd)
                             FrmMain.tabMorning2.Text = tabID + " " + userList(CInt(tabID)).GetInitials
@@ -602,37 +639,6 @@ Module modMain
                             filled = True
                     End Select
                 End If
-
-                If file.Contains("Night") Then
-                    Console.WriteLine("Filling a night tab")
-                    If CInt(tabID) = currentID Then
-                        userHasTab(0) = True
-                        Console.WriteLine("has night tab")
-                    End If
-                    Select Case filledCounter(2)
-                        Case 0
-                            FrmMain.txtNight1.Text = crypto.DecryptData(fileReader.ReadToEnd)
-                            FrmMain.tabNight1.Text = tabID + " " + userList(CInt(tabID)).GetInitials
-                            filledCounter(2) = filledCounter(2) + 1
-                            filled = True
-                        Case 1
-                            FrmMain.txtNight2.Text = crypto.DecryptData(fileReader.ReadToEnd)
-                            FrmMain.tabNight2.Text = tabID + " " + userList(CInt(tabID)).GetInitials
-                            filledCounter(2) = filledCounter(2) + 1
-                            filled = True
-                        Case 2
-                            FrmMain.txtNight3.Text = crypto.DecryptData(fileReader.ReadToEnd)
-                            FrmMain.tabNight3.Text = tabID + " " + userList(CInt(tabID)).GetInitials
-                            filledCounter(2) = filledCounter(2) + 1
-                            filled = True
-
-                        Case 3
-                            FrmMain.txtNight4.Text = crypto.DecryptData(fileReader.ReadToEnd)
-                            FrmMain.tabNight4.Text = tabID + " " + userList(CInt(tabID)).GetInitials
-                            filledCounter(2) = filledCounter(2) + 1
-                            filled = True
-                    End Select
-                End If
             End While
         Next
         Console.WriteLine("Logs Filled Successfully, hiding...")
@@ -672,6 +678,88 @@ Module modMain
         'hideTabs(getShiftFileCount(files))
         FillShiftLogs(todaysDate)
         AdjustTimeSlider()
+    End Sub
+
+    Public Sub modifyTextControlHandler(tabID As Integer, userID As String)
+        Dim consoleDebug As Boolean = True
+        Dim userIDInt As Integer = Integer.Parse(userID)
+        If consoleDebug Then
+            Console.WriteLine("modifyTextControlHandler(tabID: " + CStr(tabID) + " userID: " + userID + "Current userID: " + CStr(currentID))
+        End If
+        Select Case tabID
+            Case 0
+                If currentID = userIDInt Then
+                    FrmMain.tabNight1.Enabled = True
+                Else
+                    FrmMain.tabNight1.Enabled = False
+                End If
+            Case 1
+                If currentID = userIDInt Then
+                    FrmMain.tabNight2.Enabled = True
+                Else
+                    FrmMain.tabNight2.Enabled = False
+                End If
+            Case 2
+                If currentID = userIDInt Then
+                    FrmMain.tabNight3.Enabled = True
+                Else
+                    FrmMain.tabNight3.Enabled = False
+                End If
+            Case 3
+                If currentID = userIDInt Then
+                    FrmMain.tabNight4.Enabled = True
+                Else
+                    FrmMain.tabNight4.Enabled = False
+                End If
+            Case 4
+                If currentID = userIDInt Then
+                    FrmMain.tabMorning1.Enabled = True
+                Else
+                    FrmMain.tabMorning1.Enabled = False
+                End If
+            Case 5
+                If currentID = userIDInt Then
+                    FrmMain.tabMorning2.Enabled = True
+                Else
+                    FrmMain.tabMorning2.Enabled = False
+                End If
+            Case 6
+                If currentID = userIDInt Then
+                    FrmMain.tabMorning3.Enabled = True
+                Else
+                    FrmMain.tabMorning3.Enabled = False
+                End If
+            Case 7
+                If currentID = userIDInt Then
+                    FrmMain.tabMorning4.Enabled = True
+                Else
+                    FrmMain.tabMorning4.Enabled = False
+                End If
+            Case 8
+                If currentID = userIDInt Then
+                    FrmMain.tabAfternoon1.Enabled = True
+                Else
+                    FrmMain.tabAfternoon1.Enabled = False
+                End If
+            Case 9
+                If currentID = userIDInt Then
+                    FrmMain.tabAfternoon2.Enabled = True
+                Else
+                    FrmMain.tabAfternoon2.Enabled = False
+                End If
+            Case 10
+                If currentID = userIDInt Then
+                    FrmMain.tabAfternoon3.Enabled = True
+                Else
+                    FrmMain.tabAfternoon3.Enabled = False
+                End If
+            Case 11
+                If currentID = userIDInt Then
+                    FrmMain.tabAfternoon4.Enabled = True
+                Else
+                    FrmMain.tabAfternoon4.Enabled = False
+                End If
+        End Select
     End Sub
 
     'TODO hide tabs when it is not time to start a report
@@ -840,7 +928,6 @@ Module modMain
             Case 11
                 FrmMain.tabAfternoon4.Text = CStr(userID) + " " + GetInitials(userID)
         End Select
-
     End Sub
 
     Public Sub TxtChangeHandler(timeOfDay As Integer, txt As String, tabName As String, tabID As Integer)
@@ -934,6 +1021,7 @@ Module modMain
         Console.WriteLine("Enqueued: " + msg)
     End Function
 
+    'set text fields for top of user log tab to current user
     Public Sub UpdateUser()
         Try
             FrmMain.lblName.Text = userList(currentID).GetFirstName & " " & userList(currentID).GetLastName

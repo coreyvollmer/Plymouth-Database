@@ -8,10 +8,7 @@ Public Class FrmMain
         Console.WriteLine("Program started, initializing...")
         timeKeeper = New Timerr
         timeKeeper.StartTimer()
-        If debug Then
-            Console.WriteLine("Program starting. Time: " + CStr(timeKeeper.GetTime) + "ms")
-        End If
-        crypto = New CSPTripleDES("PlymouthCrossroads")
+        crypto = New CSPTripleDES("PlymouthCrossroads") 'If this argument is changed, all cryptography will become incompatible with legacy data
         Dim logInForm = New FrmSignIn
         logInForm.Show()
         CreateAccountStructure()
@@ -107,6 +104,7 @@ Public Class FrmMain
     End Sub
     'End Keypress triggers
 
+    'Keypress timers
     Private Sub morningTimer1_Tick(sender As Object, e As EventArgs) Handles morningTimer1.Tick
         morningTimer1.Stop()
         TxtChangeHandler(1, txtMorning1.Text, txtMorning1.Name, 4)
@@ -166,4 +164,6 @@ Public Class FrmMain
         nightTimer4.Stop()
         TxtChangeHandler(3, txtNight4.Text, txtNight4.Name, 3)
     End Sub
+    'End Keypress timers
+
 End Class

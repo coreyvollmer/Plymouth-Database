@@ -209,7 +209,7 @@ Partial Class frmUserList
         Me.GroupBox2.Size = New System.Drawing.Size(304, 166)
         Me.GroupBox2.TabIndex = 9
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Selected"
+        Me.GroupBox2.Text = "Selected User"
         '
         'btnDelete
         '
@@ -226,9 +226,8 @@ Partial Class frmUserList
         Me.lblUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblUser.Location = New System.Drawing.Point(85, 39)
         Me.lblUser.Name = "lblUser"
-        Me.lblUser.Size = New System.Drawing.Size(49, 16)
+        Me.lblUser.Size = New System.Drawing.Size(0, 16)
         Me.lblUser.TabIndex = 21
-        Me.lblUser.Text = "Label4"
         '
         'lblName
         '
@@ -236,9 +235,8 @@ Partial Class frmUserList
         Me.lblName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblName.Location = New System.Drawing.Point(54, 16)
         Me.lblName.Name = "lblName"
-        Me.lblName.Size = New System.Drawing.Size(42, 16)
+        Me.lblName.Size = New System.Drawing.Size(0, 16)
         Me.lblName.TabIndex = 20
-        Me.lblName.Text = "name"
         '
         'lbliD
         '
@@ -246,9 +244,8 @@ Partial Class frmUserList
         Me.lbliD.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbliD.Location = New System.Drawing.Point(41, 64)
         Me.lbliD.Name = "lbliD"
-        Me.lbliD.Size = New System.Drawing.Size(26, 16)
+        Me.lbliD.Size = New System.Drawing.Size(0, 16)
         Me.lbliD.TabIndex = 19
-        Me.lbliD.Text = "id#"
         '
         'Label9
         '
@@ -297,9 +294,8 @@ Partial Class frmUserList
         Me.lblAdmin.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblAdmin.Location = New System.Drawing.Point(108, 92)
         Me.lblAdmin.Name = "lblAdmin"
-        Me.lblAdmin.Size = New System.Drawing.Size(31, 18)
+        Me.lblAdmin.Size = New System.Drawing.Size(2, 18)
         Me.lblAdmin.TabIndex = 12
-        Me.lblAdmin.Text = "test"
         '
         'Label3
         '

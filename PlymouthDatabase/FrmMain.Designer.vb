@@ -23,7 +23,8 @@ Partial Class FrmMain
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ListViewItem2 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("test")
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMain))
+        Dim ListViewItem4 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("test")
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuStripLogIn = New System.Windows.Forms.ToolStripMenuItem()
@@ -33,6 +34,14 @@ Partial Class FrmMain
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.tabProgressNotes = New System.Windows.Forms.TabPage()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.MonthCalendar1 = New System.Windows.Forms.MonthCalendar()
+        Me.goalPlanPanel = New System.Windows.Forms.Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.tabShiftLogs = New System.Windows.Forms.TabPage()
         Me.Panel7 = New System.Windows.Forms.Panel()
@@ -81,6 +90,7 @@ Partial Class FrmMain
         Me.lblAfternoon = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.welcomePage = New System.Windows.Forms.TabPage()
+        Me.webWelcome = New System.Windows.Forms.WebBrowser()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.nightTimer1 = New System.Windows.Forms.Timer(Me.components)
         Me.morningTimer1 = New System.Windows.Forms.Timer(Me.components)
@@ -94,9 +104,15 @@ Partial Class FrmMain
         Me.afternoonTimer2 = New System.Windows.Forms.Timer(Me.components)
         Me.afternoonTimer3 = New System.Windows.Forms.Timer(Me.components)
         Me.afternoonTimer4 = New System.Windows.Forms.Timer(Me.components)
+        Me.TabControl2 = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabProgressNotes.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabShiftLogs.SuspendLayout()
         Me.Panel7.SuspendLayout()
         CType(Me.tBarTime, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -119,7 +135,10 @@ Partial Class FrmMain
         Me.tabAfternoon2.SuspendLayout()
         Me.tabAfternoon3.SuspendLayout()
         Me.tabAfternoon4.SuspendLayout()
+        Me.welcomePage.SuspendLayout()
         Me.TabControl1.SuspendLayout()
+        Me.TabControl2.SuspendLayout()
+        Me.Panel8.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -127,7 +146,7 @@ Partial Class FrmMain
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.menuStripAdmin, Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(884, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1008, 24)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -171,21 +190,102 @@ Partial Class FrmMain
         '
         'tabProgressNotes
         '
+        Me.tabProgressNotes.Controls.Add(Me.Panel8)
+        Me.tabProgressNotes.Controls.Add(Me.TabControl2)
+        Me.tabProgressNotes.Controls.Add(Me.Label7)
+        Me.tabProgressNotes.Controls.Add(Me.MonthCalendar1)
+        Me.tabProgressNotes.Controls.Add(Me.goalPlanPanel)
+        Me.tabProgressNotes.Controls.Add(Me.Label1)
+        Me.tabProgressNotes.Controls.Add(Me.PictureBox1)
         Me.tabProgressNotes.Controls.Add(Me.ListView1)
         Me.tabProgressNotes.Location = New System.Drawing.Point(4, 22)
         Me.tabProgressNotes.Name = "tabProgressNotes"
         Me.tabProgressNotes.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabProgressNotes.Size = New System.Drawing.Size(852, 604)
+        Me.tabProgressNotes.Size = New System.Drawing.Size(1000, 611)
         Me.tabProgressNotes.TabIndex = 1
         Me.tabProgressNotes.Text = "Progress Notes"
         Me.tabProgressNotes.UseVisualStyleBackColor = True
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(533, -2)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(349, 20)
+        Me.Label7.TabIndex = 8
+        Me.Label7.Text = "Goals/Objectives and Individualized Service Plan"
+        '
+        'MonthCalendar1
+        '
+        Me.MonthCalendar1.Location = New System.Drawing.Point(194, 443)
+        Me.MonthCalendar1.Name = "MonthCalendar1"
+        Me.MonthCalendar1.TabIndex = 7
+        '
+        'goalPlanPanel
+        '
+        Me.goalPlanPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.goalPlanPanel.Location = New System.Drawing.Point(425, 6)
+        Me.goalPlanPanel.Name = "goalPlanPanel"
+        Me.goalPlanPanel.Size = New System.Drawing.Size(569, 248)
+        Me.goalPlanPanel.TabIndex = 6
+        Me.goalPlanPanel.Tag = ""
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(12, 57)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(48, 13)
+        Me.Label6.TabIndex = 5
+        Me.Label6.Text = "Birthday:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(12, 33)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(82, 13)
+        Me.Label3.TabIndex = 4
+        Me.Label3.Text = "Resident Since:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(12, 10)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(29, 13)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Age:"
+        '
+        'Label1
+        '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(194, 257)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(225, 32)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Example Resident"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.InitialImage = Nothing
+        Me.PictureBox1.Location = New System.Drawing.Point(194, 6)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(225, 248)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabStop = False
+        '
         'ListView1
         '
-        Me.ListView1.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem2})
-        Me.ListView1.Location = New System.Drawing.Point(6, 9)
+        Me.ListView1.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem4})
+        Me.ListView1.Location = New System.Drawing.Point(6, 6)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(182, 592)
+        Me.ListView1.Size = New System.Drawing.Size(182, 599)
         Me.ListView1.TabIndex = 0
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -201,7 +301,7 @@ Partial Class FrmMain
         Me.tabShiftLogs.Location = New System.Drawing.Point(4, 22)
         Me.tabShiftLogs.Name = "tabShiftLogs"
         Me.tabShiftLogs.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabShiftLogs.Size = New System.Drawing.Size(852, 604)
+        Me.tabShiftLogs.Size = New System.Drawing.Size(1000, 611)
         Me.tabShiftLogs.TabIndex = 0
         Me.tabShiftLogs.Text = "Daily Shift Logs"
         Me.tabShiftLogs.UseVisualStyleBackColor = True
@@ -645,22 +745,35 @@ Partial Class FrmMain
         '
         'welcomePage
         '
+        Me.welcomePage.Controls.Add(Me.webWelcome)
         Me.welcomePage.Location = New System.Drawing.Point(4, 22)
         Me.welcomePage.Name = "welcomePage"
-        Me.welcomePage.Size = New System.Drawing.Size(852, 604)
+        Me.welcomePage.Size = New System.Drawing.Size(1000, 611)
         Me.welcomePage.TabIndex = 2
         Me.welcomePage.Text = "Welcome"
         Me.welcomePage.UseVisualStyleBackColor = True
+        '
+        'webWelcome
+        '
+        Me.webWelcome.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.webWelcome.Location = New System.Drawing.Point(0, 0)
+        Me.webWelcome.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.webWelcome.Name = "webWelcome"
+        Me.webWelcome.Size = New System.Drawing.Size(1000, 611)
+        Me.webWelcome.TabIndex = 0
+        Me.webWelcome.Tag = ""
+        Me.webWelcome.Url = New System.Uri("http://www.plymouthcrossroads.org/", System.UriKind.Absolute)
         '
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.welcomePage)
         Me.TabControl1.Controls.Add(Me.tabShiftLogs)
         Me.TabControl1.Controls.Add(Me.tabProgressNotes)
-        Me.TabControl1.Location = New System.Drawing.Point(12, 27)
+        Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TabControl1.Location = New System.Drawing.Point(0, 24)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(860, 630)
+        Me.TabControl1.Size = New System.Drawing.Size(1008, 637)
         Me.TabControl1.TabIndex = 2
         '
         'nightTimer1
@@ -711,17 +824,67 @@ Partial Class FrmMain
         '
         Me.afternoonTimer4.Interval = 5000
         '
+        'TabControl2
+        '
+        Me.TabControl2.Controls.Add(Me.TabPage1)
+        Me.TabControl2.Controls.Add(Me.TabPage2)
+        Me.TabControl2.Location = New System.Drawing.Point(425, 257)
+        Me.TabControl2.Name = "TabControl2"
+        Me.TabControl2.SelectedIndex = 0
+        Me.TabControl2.Size = New System.Drawing.Size(572, 348)
+        Me.TabControl2.TabIndex = 9
+        '
+        'TabPage1
+        '
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(564, 322)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "Interests"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'TabPage2
+        '
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(564, 322)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Ziggy Bucks"
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'Panel8
+        '
+        Me.Panel8.Controls.Add(Me.Label8)
+        Me.Panel8.Controls.Add(Me.Label2)
+        Me.Panel8.Controls.Add(Me.Label3)
+        Me.Panel8.Controls.Add(Me.Label6)
+        Me.Panel8.Location = New System.Drawing.Point(194, 292)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(227, 149)
+        Me.Panel8.TabIndex = 10
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(12, 79)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(69, 13)
+        Me.Label8.TabIndex = 6
+        Me.Label8.Text = "Ziggy Bucks:"
+        '
         'FrmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(884, 661)
+        Me.ClientSize = New System.Drawing.Size(1008, 661)
         Me.ControlBox = False
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.MaximumSize = New System.Drawing.Size(900, 700)
-        Me.MinimumSize = New System.Drawing.Size(900, 700)
+        Me.MaximumSize = New System.Drawing.Size(1024, 700)
+        Me.MinimumSize = New System.Drawing.Size(1024, 700)
         Me.Name = "FrmMain"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Plymouth Crossroads Database"
@@ -731,6 +894,8 @@ Partial Class FrmMain
         Me.MenuStrip1.PerformLayout()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tabProgressNotes.ResumeLayout(False)
+        Me.tabProgressNotes.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tabShiftLogs.ResumeLayout(False)
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
@@ -758,7 +923,11 @@ Partial Class FrmMain
         Me.tabAfternoon2.ResumeLayout(False)
         Me.tabAfternoon3.ResumeLayout(False)
         Me.tabAfternoon4.ResumeLayout(False)
+        Me.welcomePage.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
+        Me.TabControl2.ResumeLayout(False)
+        Me.Panel8.ResumeLayout(False)
+        Me.Panel8.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -834,4 +1003,18 @@ Partial Class FrmMain
     Friend WithEvents afternoonTimer2 As Timer
     Friend WithEvents afternoonTimer3 As Timer
     Friend WithEvents afternoonTimer4 As Timer
+    Friend WithEvents webWelcome As WebBrowser
+    Friend WithEvents Label1 As Label
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents MonthCalendar1 As MonthCalendar
+    Friend WithEvents goalPlanPanel As Panel
+    Friend WithEvents Panel8 As Panel
+    Friend WithEvents Label8 As Label
+    Friend WithEvents TabControl2 As TabControl
+    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents TabPage2 As TabPage
 End Class

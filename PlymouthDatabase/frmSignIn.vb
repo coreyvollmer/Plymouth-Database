@@ -38,7 +38,8 @@ Public Class FrmSignIn
     End Function
 
     Function SignIn(iD As Integer) As Boolean
-        currentID = iD
+        Console.WriteLine("signing in with id: " + CStr(iD))
+        currentID = iD 'set id of currently logged in user to global variable
         failClose = False
         Me.Close()
         UpdateUser()
