@@ -6,7 +6,7 @@ Public Class FrmMain
 
     Public Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Console.WriteLine("Program started, initializing...")
-        timeKeeper = New Timerr
+        timeKeeper = New saveTimer
         timeKeeper.StartTimer()
         crypto = New CSPTripleDES("PlymouthCrossroads") 'If this argument is changed, all cryptography functions will become incompatible with legacy data
         Dim logInForm = New FrmSignIn
@@ -16,7 +16,6 @@ Public Class FrmMain
     End Sub
 
     'MenuStrip Subroutines
-
     'File, Log In
     Private Sub Menu_LogIn_Click(sender As Object, e As EventArgs) Handles menuStripLogIn.Click
         Dim signInForm = New FrmSignIn
@@ -189,7 +188,6 @@ Public Class FrmMain
         nightTimer4.Stop()
         TxtChangeHandler(3, txtNight4.Text, txtNight4.Name, 3)
     End Sub
-
     'End Keypress timers
 
 End Class

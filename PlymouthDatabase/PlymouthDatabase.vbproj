@@ -130,7 +130,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="saveMessageHandler.vb" />
-    <Compile Include="Timerr.vb" />
+    <Compile Include="saveTimer.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmResidentManager.resx">
