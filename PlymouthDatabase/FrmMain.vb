@@ -32,22 +32,24 @@ Public Class FrmMain
     'Admin, Staff User Manager
     Private Sub Menu_StaffUserManager_Click(sender As Object, e As EventArgs) Handles menuStripStaffUserManager.Click
         If userList(currentID).isAdmin Then
-            Dim userListForm = New frmStaffUserList
+            Dim userListForm = New frmStaffUserManager
             userListForm.Show()
-        End If
-        If Not userList(currentID).isAdmin Then
+        ElseIf Not userList(currentID).isAdmin Then
             MsgBox("You are not an administrator.")
+        Else
+            MsgBox("User has an undefined administrator property")
         End If
     End Sub
 
     'Admin, Resident Profile Manager
     Private Sub Menu_ResidentProfileManager_Click(sender As Object, e As EventArgs) Handles menuStripResProfileManager.Click
         If userList(currentID).isAdmin Then
-            Dim residentManagerForm = New frmStaffUserList
+            Dim residentManagerForm = New frmResidentManager
             residentManagerForm.Show()
-        End If
-        If Not userList(currentID).isAdmin Then
+        ElseIf Not userList(currentID).isAdmin Then
             MsgBox("You are not an administrator.")
+        Else
+            MsgBox("User has an undefined administrator property")
         End If
     End Sub
 

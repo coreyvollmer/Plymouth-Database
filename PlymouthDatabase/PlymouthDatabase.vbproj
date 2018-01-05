@@ -88,10 +88,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CSPTripleDES.vb" />
-    <Compile Include="frmResUserList.Designer.vb">
-      <DependentUpon>frmResUserList.vb</DependentUpon>
+    <Compile Include="frmResidentManager.Designer.vb">
+      <DependentUpon>frmResidentManager.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmResUserList.vb">
+    <Compile Include="frmResidentManager.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmSignIn.Designer.vb">
@@ -107,10 +107,10 @@
       <DependentUpon>FrmMain.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmStaffUserList.Designer.vb">
-      <DependentUpon>frmStaffUserList.vb</DependentUpon>
+    <Compile Include="frmStaffUserManager.Designer.vb">
+      <DependentUpon>frmStaffUserManager.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmStaffUserList.vb">
+    <Compile Include="frmStaffUserManager.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="modMain.vb" />
@@ -133,8 +133,8 @@
     <Compile Include="Timerr.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmResUserList.resx">
-      <DependentUpon>frmResUserList.vb</DependentUpon>
+    <EmbeddedResource Include="frmResidentManager.resx">
+      <DependentUpon>frmResidentManager.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSignIn.resx">
       <DependentUpon>frmSignIn.vb</DependentUpon>
@@ -142,8 +142,8 @@
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmStaffUserList.resx">
-      <DependentUpon>frmStaffUserList.vb</DependentUpon>
+    <EmbeddedResource Include="frmStaffUserManager.resx">
+      <DependentUpon>frmStaffUserManager.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

@@ -24,7 +24,7 @@ Partial Class FrmMain
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMain))
-        Dim ListViewItem1 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("test")
+        Dim ListViewItem3 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("test")
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
         Me.menuStripFile = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuStripLogIn = New System.Windows.Forms.ToolStripMenuItem()
@@ -33,6 +33,7 @@ Partial Class FrmMain
         Me.menuStripStaffUserManager = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuStripResProfileManager = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuStripHelp = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuStripAbout = New System.Windows.Forms.ToolStripMenuItem()
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.tabProgressNotes = New System.Windows.Forms.TabPage()
         Me.Panel8 = New System.Windows.Forms.Panel()
@@ -70,19 +71,6 @@ Partial Class FrmMain
         Me.tabNight4 = New System.Windows.Forms.TabPage()
         Me.txtNight4 = New System.Windows.Forms.RichTextBox()
         Me.lblOvernight = New System.Windows.Forms.Label()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.TabControlMorning = New System.Windows.Forms.TabControl()
-        Me.tabMorning1 = New System.Windows.Forms.TabPage()
-        Me.txtMorning1 = New System.Windows.Forms.RichTextBox()
-        Me.tabMorning2 = New System.Windows.Forms.TabPage()
-        Me.txtMorning2 = New System.Windows.Forms.RichTextBox()
-        Me.tabMorning3 = New System.Windows.Forms.TabPage()
-        Me.txtMorning3 = New System.Windows.Forms.RichTextBox()
-        Me.tabMorning4 = New System.Windows.Forms.TabPage()
-        Me.txtMorning4 = New System.Windows.Forms.RichTextBox()
-        Me.lblMorning = New System.Windows.Forms.Label()
-        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TabControlAfternoon = New System.Windows.Forms.TabControl()
         Me.tabAfternoon1 = New System.Windows.Forms.TabPage()
@@ -94,7 +82,6 @@ Partial Class FrmMain
         Me.tabAfternoon4 = New System.Windows.Forms.TabPage()
         Me.txtAfternoon4 = New System.Windows.Forms.RichTextBox()
         Me.lblAfternoon = New System.Windows.Forms.Label()
-        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.welcomePage = New System.Windows.Forms.TabPage()
         Me.webWelcome = New System.Windows.Forms.WebBrowser()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
@@ -110,7 +97,17 @@ Partial Class FrmMain
         Me.afternoonTimer2 = New System.Windows.Forms.Timer(Me.components)
         Me.afternoonTimer3 = New System.Windows.Forms.Timer(Me.components)
         Me.afternoonTimer4 = New System.Windows.Forms.Timer(Me.components)
-        Me.menuStripAbout = New System.Windows.Forms.ToolStripMenuItem()
+        Me.lblMorning = New System.Windows.Forms.Label()
+        Me.TabControlMorning = New System.Windows.Forms.TabControl()
+        Me.tabMorning4 = New System.Windows.Forms.TabPage()
+        Me.txtMorning4 = New System.Windows.Forms.RichTextBox()
+        Me.tabMorning3 = New System.Windows.Forms.TabPage()
+        Me.txtMorning3 = New System.Windows.Forms.RichTextBox()
+        Me.tabMorning2 = New System.Windows.Forms.TabPage()
+        Me.txtMorning2 = New System.Windows.Forms.RichTextBox()
+        Me.tabMorning1 = New System.Windows.Forms.TabPage()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txtMorning1 = New System.Windows.Forms.RichTextBox()
         Me.MenuStrip.SuspendLayout()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabProgressNotes.SuspendLayout()
@@ -127,12 +124,6 @@ Partial Class FrmMain
         Me.tabNight2.SuspendLayout()
         Me.tabNight3.SuspendLayout()
         Me.tabNight4.SuspendLayout()
-        Me.Panel1.SuspendLayout()
-        Me.TabControlMorning.SuspendLayout()
-        Me.tabMorning1.SuspendLayout()
-        Me.tabMorning2.SuspendLayout()
-        Me.tabMorning3.SuspendLayout()
-        Me.tabMorning4.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.TabControlAfternoon.SuspendLayout()
         Me.tabAfternoon1.SuspendLayout()
@@ -141,6 +132,12 @@ Partial Class FrmMain
         Me.tabAfternoon4.SuspendLayout()
         Me.welcomePage.SuspendLayout()
         Me.TabControl1.SuspendLayout()
+        Me.TabControlMorning.SuspendLayout()
+        Me.tabMorning4.SuspendLayout()
+        Me.tabMorning3.SuspendLayout()
+        Me.tabMorning2.SuspendLayout()
+        Me.tabMorning1.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip
@@ -162,13 +159,13 @@ Partial Class FrmMain
         'menuStripLogIn
         '
         Me.menuStripLogIn.Name = "menuStripLogIn"
-        Me.menuStripLogIn.Size = New System.Drawing.Size(152, 22)
+        Me.menuStripLogIn.Size = New System.Drawing.Size(107, 22)
         Me.menuStripLogIn.Text = "Log In"
         '
         'menuStripExit
         '
         Me.menuStripExit.Name = "menuStripExit"
-        Me.menuStripExit.Size = New System.Drawing.Size(152, 22)
+        Me.menuStripExit.Size = New System.Drawing.Size(107, 22)
         Me.menuStripExit.Text = "Exit"
         '
         'menuStripAdmin
@@ -196,6 +193,12 @@ Partial Class FrmMain
         Me.menuStripHelp.Name = "menuStripHelp"
         Me.menuStripHelp.Size = New System.Drawing.Size(44, 20)
         Me.menuStripHelp.Text = "Help"
+        '
+        'menuStripAbout
+        '
+        Me.menuStripAbout.Name = "menuStripAbout"
+        Me.menuStripAbout.Size = New System.Drawing.Size(107, 22)
+        Me.menuStripAbout.Text = "About"
         '
         'tabProgressNotes
         '
@@ -341,7 +344,7 @@ Partial Class FrmMain
         '
         'ListView1
         '
-        Me.ListView1.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem1})
+        Me.ListView1.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem3})
         Me.ListView1.Location = New System.Drawing.Point(6, 6)
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(182, 599)
@@ -370,7 +373,7 @@ Partial Class FrmMain
         Me.Panel7.Controls.Add(Me.tBarTime)
         Me.Panel7.Location = New System.Drawing.Point(6, 163)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(840, 33)
+        Me.Panel7.Size = New System.Drawing.Size(988, 33)
         Me.Panel7.TabIndex = 7
         '
         'tBarTime
@@ -378,7 +381,7 @@ Partial Class FrmMain
         Me.tBarTime.Location = New System.Drawing.Point(0, 0)
         Me.tBarTime.Maximum = 94
         Me.tBarTime.Name = "tBarTime"
-        Me.tBarTime.Size = New System.Drawing.Size(840, 45)
+        Me.tBarTime.Size = New System.Drawing.Size(988, 45)
         Me.tBarTime.TabIndex = 7
         Me.tBarTime.TabStop = False
         Me.tBarTime.TickStyle = System.Windows.Forms.TickStyle.TopLeft
@@ -458,10 +461,9 @@ Partial Class FrmMain
         '
         Me.Panel5.Controls.Add(Me.TabControlOvernight)
         Me.Panel5.Controls.Add(Me.lblOvernight)
-        Me.Panel5.Controls.Add(Me.Panel6)
-        Me.Panel5.Location = New System.Drawing.Point(10, 198)
+        Me.Panel5.Location = New System.Drawing.Point(6, 198)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(274, 400)
+        Me.Panel5.Size = New System.Drawing.Size(324, 400)
         Me.Panel5.TabIndex = 4
         '
         'TabControlOvernight
@@ -473,7 +475,7 @@ Partial Class FrmMain
         Me.TabControlOvernight.Location = New System.Drawing.Point(3, 28)
         Me.TabControlOvernight.Name = "TabControlOvernight"
         Me.TabControlOvernight.SelectedIndex = 0
-        Me.TabControlOvernight.Size = New System.Drawing.Size(268, 369)
+        Me.TabControlOvernight.Size = New System.Drawing.Size(318, 369)
         Me.TabControlOvernight.TabIndex = 7
         '
         'tabNight1
@@ -481,7 +483,7 @@ Partial Class FrmMain
         Me.tabNight1.Controls.Add(Me.txtNight1)
         Me.tabNight1.Location = New System.Drawing.Point(4, 22)
         Me.tabNight1.Name = "tabNight1"
-        Me.tabNight1.Size = New System.Drawing.Size(260, 343)
+        Me.tabNight1.Size = New System.Drawing.Size(310, 343)
         Me.tabNight1.TabIndex = 0
         Me.tabNight1.Text = "Overnight Log"
         Me.tabNight1.UseVisualStyleBackColor = True
@@ -491,7 +493,7 @@ Partial Class FrmMain
         Me.txtNight1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtNight1.Location = New System.Drawing.Point(0, 0)
         Me.txtNight1.Name = "txtNight1"
-        Me.txtNight1.Size = New System.Drawing.Size(260, 343)
+        Me.txtNight1.Size = New System.Drawing.Size(310, 343)
         Me.txtNight1.TabIndex = 0
         Me.txtNight1.Text = ""
         '
@@ -556,143 +558,19 @@ Partial Class FrmMain
         '
         Me.lblOvernight.AutoSize = True
         Me.lblOvernight.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblOvernight.Location = New System.Drawing.Point(55, 1)
+        Me.lblOvernight.Location = New System.Drawing.Point(75, 1)
         Me.lblOvernight.Name = "lblOvernight"
         Me.lblOvernight.Size = New System.Drawing.Size(165, 32)
         Me.lblOvernight.TabIndex = 6
         Me.lblOvernight.Text = "12AM - 8AM"
         '
-        'Panel6
-        '
-        Me.Panel6.Location = New System.Drawing.Point(306, 0)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(225, 345)
-        Me.Panel6.TabIndex = 3
-        '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.TabControlMorning)
-        Me.Panel1.Controls.Add(Me.lblMorning)
-        Me.Panel1.Controls.Add(Me.Panel4)
-        Me.Panel1.Location = New System.Drawing.Point(290, 198)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(274, 400)
-        Me.Panel1.TabIndex = 4
-        '
-        'TabControlMorning
-        '
-        Me.TabControlMorning.Controls.Add(Me.tabMorning1)
-        Me.TabControlMorning.Controls.Add(Me.tabMorning2)
-        Me.TabControlMorning.Controls.Add(Me.tabMorning3)
-        Me.TabControlMorning.Controls.Add(Me.tabMorning4)
-        Me.TabControlMorning.Location = New System.Drawing.Point(0, 28)
-        Me.TabControlMorning.Name = "TabControlMorning"
-        Me.TabControlMorning.SelectedIndex = 0
-        Me.TabControlMorning.Size = New System.Drawing.Size(271, 369)
-        Me.TabControlMorning.TabIndex = 6
-        '
-        'tabMorning1
-        '
-        Me.tabMorning1.AccessibleRole = System.Windows.Forms.AccessibleRole.Text
-        Me.tabMorning1.Controls.Add(Me.txtMorning1)
-        Me.tabMorning1.Location = New System.Drawing.Point(4, 22)
-        Me.tabMorning1.Name = "tabMorning1"
-        Me.tabMorning1.Size = New System.Drawing.Size(263, 343)
-        Me.tabMorning1.TabIndex = 0
-        Me.tabMorning1.Text = "Day Log"
-        Me.tabMorning1.UseVisualStyleBackColor = True
-        '
-        'txtMorning1
-        '
-        Me.txtMorning1.Location = New System.Drawing.Point(0, 0)
-        Me.txtMorning1.Name = "txtMorning1"
-        Me.txtMorning1.Size = New System.Drawing.Size(263, 339)
-        Me.txtMorning1.TabIndex = 0
-        Me.txtMorning1.Text = ""
-        '
-        'tabMorning2
-        '
-        Me.tabMorning2.Controls.Add(Me.txtMorning2)
-        Me.tabMorning2.Location = New System.Drawing.Point(4, 22)
-        Me.tabMorning2.Name = "tabMorning2"
-        Me.tabMorning2.Size = New System.Drawing.Size(263, 343)
-        Me.tabMorning2.TabIndex = 1
-        Me.tabMorning2.Text = "Empty"
-        Me.tabMorning2.UseVisualStyleBackColor = True
-        '
-        'txtMorning2
-        '
-        Me.txtMorning2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtMorning2.Location = New System.Drawing.Point(0, 0)
-        Me.txtMorning2.Name = "txtMorning2"
-        Me.txtMorning2.Size = New System.Drawing.Size(263, 343)
-        Me.txtMorning2.TabIndex = 0
-        Me.txtMorning2.Text = ""
-        '
-        'tabMorning3
-        '
-        Me.tabMorning3.Controls.Add(Me.txtMorning3)
-        Me.tabMorning3.Location = New System.Drawing.Point(4, 22)
-        Me.tabMorning3.Name = "tabMorning3"
-        Me.tabMorning3.Size = New System.Drawing.Size(263, 343)
-        Me.tabMorning3.TabIndex = 2
-        Me.tabMorning3.Text = "Empty"
-        Me.tabMorning3.UseVisualStyleBackColor = True
-        '
-        'txtMorning3
-        '
-        Me.txtMorning3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtMorning3.Location = New System.Drawing.Point(0, 0)
-        Me.txtMorning3.Name = "txtMorning3"
-        Me.txtMorning3.Size = New System.Drawing.Size(263, 343)
-        Me.txtMorning3.TabIndex = 0
-        Me.txtMorning3.Text = ""
-        '
-        'tabMorning4
-        '
-        Me.tabMorning4.Controls.Add(Me.txtMorning4)
-        Me.tabMorning4.Location = New System.Drawing.Point(4, 22)
-        Me.tabMorning4.Name = "tabMorning4"
-        Me.tabMorning4.Size = New System.Drawing.Size(263, 343)
-        Me.tabMorning4.TabIndex = 3
-        Me.tabMorning4.Text = "Empty"
-        Me.tabMorning4.UseVisualStyleBackColor = True
-        '
-        'txtMorning4
-        '
-        Me.txtMorning4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtMorning4.Location = New System.Drawing.Point(0, 0)
-        Me.txtMorning4.Name = "txtMorning4"
-        Me.txtMorning4.Size = New System.Drawing.Size(263, 343)
-        Me.txtMorning4.TabIndex = 0
-        Me.txtMorning4.Text = ""
-        '
-        'lblMorning
-        '
-        Me.lblMorning.AutoSize = True
-        Me.lblMorning.BackColor = System.Drawing.Color.Transparent
-        Me.lblMorning.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMorning.Location = New System.Drawing.Point(63, 1)
-        Me.lblMorning.Name = "lblMorning"
-        Me.lblMorning.Size = New System.Drawing.Size(149, 32)
-        Me.lblMorning.TabIndex = 4
-        Me.lblMorning.Text = "8AM - 4PM"
-        '
-        'Panel4
-        '
-        Me.Panel4.Location = New System.Drawing.Point(306, 0)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(225, 345)
-        Me.Panel4.TabIndex = 3
-        '
         'Panel2
         '
         Me.Panel2.Controls.Add(Me.TabControlAfternoon)
         Me.Panel2.Controls.Add(Me.lblAfternoon)
-        Me.Panel2.Controls.Add(Me.Panel3)
-        Me.Panel2.Location = New System.Drawing.Point(572, 201)
+        Me.Panel2.Location = New System.Drawing.Point(670, 199)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(274, 400)
+        Me.Panel2.Size = New System.Drawing.Size(324, 400)
         Me.Panel2.TabIndex = 3
         '
         'TabControlAfternoon
@@ -704,7 +582,7 @@ Partial Class FrmMain
         Me.TabControlAfternoon.Location = New System.Drawing.Point(3, 28)
         Me.TabControlAfternoon.Name = "TabControlAfternoon"
         Me.TabControlAfternoon.SelectedIndex = 0
-        Me.TabControlAfternoon.Size = New System.Drawing.Size(268, 369)
+        Me.TabControlAfternoon.Size = New System.Drawing.Size(318, 369)
         Me.TabControlAfternoon.TabIndex = 6
         '
         'tabAfternoon1
@@ -712,7 +590,7 @@ Partial Class FrmMain
         Me.tabAfternoon1.Controls.Add(Me.txtAfternoon1)
         Me.tabAfternoon1.Location = New System.Drawing.Point(4, 22)
         Me.tabAfternoon1.Name = "tabAfternoon1"
-        Me.tabAfternoon1.Size = New System.Drawing.Size(260, 343)
+        Me.tabAfternoon1.Size = New System.Drawing.Size(310, 343)
         Me.tabAfternoon1.TabIndex = 0
         Me.tabAfternoon1.Text = "Evening Log"
         Me.tabAfternoon1.UseVisualStyleBackColor = True
@@ -722,7 +600,7 @@ Partial Class FrmMain
         Me.txtAfternoon1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtAfternoon1.Location = New System.Drawing.Point(0, 0)
         Me.txtAfternoon1.Name = "txtAfternoon1"
-        Me.txtAfternoon1.Size = New System.Drawing.Size(260, 343)
+        Me.txtAfternoon1.Size = New System.Drawing.Size(310, 343)
         Me.txtAfternoon1.TabIndex = 0
         Me.txtAfternoon1.Text = ""
         '
@@ -789,18 +667,11 @@ Partial Class FrmMain
         Me.lblAfternoon.BackColor = System.Drawing.Color.Transparent
         Me.lblAfternoon.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblAfternoon.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblAfternoon.Location = New System.Drawing.Point(56, 1)
+        Me.lblAfternoon.Location = New System.Drawing.Point(81, 1)
         Me.lblAfternoon.Name = "lblAfternoon"
         Me.lblAfternoon.Size = New System.Drawing.Size(164, 32)
         Me.lblAfternoon.TabIndex = 5
         Me.lblAfternoon.Text = "4PM - 12AM"
-        '
-        'Panel3
-        '
-        Me.Panel3.Location = New System.Drawing.Point(306, 0)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(225, 345)
-        Me.Panel3.TabIndex = 3
         '
         'welcomePage
         '
@@ -883,11 +754,113 @@ Partial Class FrmMain
         '
         Me.afternoonTimer4.Interval = 5000
         '
-        'menuStripAbout
+        'lblMorning
         '
-        Me.menuStripAbout.Name = "menuStripAbout"
-        Me.menuStripAbout.Size = New System.Drawing.Size(152, 22)
-        Me.menuStripAbout.Text = "About"
+        Me.lblMorning.AutoSize = True
+        Me.lblMorning.BackColor = System.Drawing.Color.Transparent
+        Me.lblMorning.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMorning.Location = New System.Drawing.Point(87, 0)
+        Me.lblMorning.Name = "lblMorning"
+        Me.lblMorning.Size = New System.Drawing.Size(149, 32)
+        Me.lblMorning.TabIndex = 4
+        Me.lblMorning.Text = "8AM - 4PM"
+        '
+        'TabControlMorning
+        '
+        Me.TabControlMorning.Controls.Add(Me.tabMorning1)
+        Me.TabControlMorning.Controls.Add(Me.tabMorning2)
+        Me.TabControlMorning.Controls.Add(Me.tabMorning3)
+        Me.TabControlMorning.Controls.Add(Me.tabMorning4)
+        Me.TabControlMorning.Location = New System.Drawing.Point(3, 28)
+        Me.TabControlMorning.Name = "TabControlMorning"
+        Me.TabControlMorning.SelectedIndex = 0
+        Me.TabControlMorning.Size = New System.Drawing.Size(318, 369)
+        Me.TabControlMorning.TabIndex = 6
+        '
+        'tabMorning4
+        '
+        Me.tabMorning4.Controls.Add(Me.txtMorning4)
+        Me.tabMorning4.Location = New System.Drawing.Point(4, 22)
+        Me.tabMorning4.Name = "tabMorning4"
+        Me.tabMorning4.Size = New System.Drawing.Size(313, 343)
+        Me.tabMorning4.TabIndex = 3
+        Me.tabMorning4.Text = "Empty"
+        Me.tabMorning4.UseVisualStyleBackColor = True
+        '
+        'txtMorning4
+        '
+        Me.txtMorning4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtMorning4.Location = New System.Drawing.Point(0, 0)
+        Me.txtMorning4.Name = "txtMorning4"
+        Me.txtMorning4.Size = New System.Drawing.Size(313, 343)
+        Me.txtMorning4.TabIndex = 0
+        Me.txtMorning4.Text = ""
+        '
+        'tabMorning3
+        '
+        Me.tabMorning3.Controls.Add(Me.txtMorning3)
+        Me.tabMorning3.Location = New System.Drawing.Point(4, 22)
+        Me.tabMorning3.Name = "tabMorning3"
+        Me.tabMorning3.Size = New System.Drawing.Size(313, 343)
+        Me.tabMorning3.TabIndex = 2
+        Me.tabMorning3.Text = "Empty"
+        Me.tabMorning3.UseVisualStyleBackColor = True
+        '
+        'txtMorning3
+        '
+        Me.txtMorning3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtMorning3.Location = New System.Drawing.Point(0, 0)
+        Me.txtMorning3.Name = "txtMorning3"
+        Me.txtMorning3.Size = New System.Drawing.Size(313, 343)
+        Me.txtMorning3.TabIndex = 0
+        Me.txtMorning3.Text = ""
+        '
+        'tabMorning2
+        '
+        Me.tabMorning2.Controls.Add(Me.txtMorning2)
+        Me.tabMorning2.Location = New System.Drawing.Point(4, 22)
+        Me.tabMorning2.Name = "tabMorning2"
+        Me.tabMorning2.Size = New System.Drawing.Size(313, 343)
+        Me.tabMorning2.TabIndex = 1
+        Me.tabMorning2.Text = "Empty"
+        Me.tabMorning2.UseVisualStyleBackColor = True
+        '
+        'txtMorning2
+        '
+        Me.txtMorning2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txtMorning2.Location = New System.Drawing.Point(0, 0)
+        Me.txtMorning2.Name = "txtMorning2"
+        Me.txtMorning2.Size = New System.Drawing.Size(313, 343)
+        Me.txtMorning2.TabIndex = 0
+        Me.txtMorning2.Text = ""
+        '
+        'tabMorning1
+        '
+        Me.tabMorning1.AccessibleRole = System.Windows.Forms.AccessibleRole.Text
+        Me.tabMorning1.Controls.Add(Me.txtMorning1)
+        Me.tabMorning1.Location = New System.Drawing.Point(4, 22)
+        Me.tabMorning1.Name = "tabMorning1"
+        Me.tabMorning1.Size = New System.Drawing.Size(310, 343)
+        Me.tabMorning1.TabIndex = 0
+        Me.tabMorning1.Text = "Day Log"
+        Me.tabMorning1.UseVisualStyleBackColor = True
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.TabControlMorning)
+        Me.Panel1.Controls.Add(Me.lblMorning)
+        Me.Panel1.Location = New System.Drawing.Point(339, 198)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(324, 400)
+        Me.Panel1.TabIndex = 4
+        '
+        'txtMorning1
+        '
+        Me.txtMorning1.Location = New System.Drawing.Point(3, 0)
+        Me.txtMorning1.Name = "txtMorning1"
+        Me.txtMorning1.Size = New System.Drawing.Size(310, 339)
+        Me.txtMorning1.TabIndex = 0
+        Me.txtMorning1.Text = ""
         '
         'FrmMain
         '
@@ -927,13 +900,6 @@ Partial Class FrmMain
         Me.tabNight2.ResumeLayout(False)
         Me.tabNight3.ResumeLayout(False)
         Me.tabNight4.ResumeLayout(False)
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        Me.TabControlMorning.ResumeLayout(False)
-        Me.tabMorning1.ResumeLayout(False)
-        Me.tabMorning2.ResumeLayout(False)
-        Me.tabMorning3.ResumeLayout(False)
-        Me.tabMorning4.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.TabControlAfternoon.ResumeLayout(False)
@@ -943,6 +909,13 @@ Partial Class FrmMain
         Me.tabAfternoon4.ResumeLayout(False)
         Me.welcomePage.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
+        Me.TabControlMorning.ResumeLayout(False)
+        Me.tabMorning4.ResumeLayout(False)
+        Me.tabMorning3.ResumeLayout(False)
+        Me.tabMorning2.ResumeLayout(False)
+        Me.tabMorning1.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -971,15 +944,6 @@ Partial Class FrmMain
     Friend WithEvents tabNight3 As TabPage
     Friend WithEvents tabNight4 As TabPage
     Friend WithEvents lblOvernight As Label
-    Friend WithEvents Panel6 As Panel
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents TabControlMorning As TabControl
-    Friend WithEvents tabMorning1 As TabPage
-    Friend WithEvents tabMorning2 As TabPage
-    Friend WithEvents tabMorning3 As TabPage
-    Friend WithEvents tabMorning4 As TabPage
-    Friend WithEvents lblMorning As Label
-    Friend WithEvents Panel4 As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents TabControlAfternoon As TabControl
     Friend WithEvents tabAfternoon1 As TabPage
@@ -987,17 +951,12 @@ Partial Class FrmMain
     Friend WithEvents tabAfternoon3 As TabPage
     Friend WithEvents tabAfternoon4 As TabPage
     Friend WithEvents lblAfternoon As Label
-    Friend WithEvents Panel3 As Panel
     Friend WithEvents welcomePage As TabPage
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents txtNight1 As RichTextBox
     Friend WithEvents txtNight2 As RichTextBox
     Friend WithEvents txtNight3 As RichTextBox
     Friend WithEvents txtNight4 As RichTextBox
-    Friend WithEvents txtMorning1 As RichTextBox
-    Friend WithEvents txtMorning2 As RichTextBox
-    Friend WithEvents txtMorning3 As RichTextBox
-    Friend WithEvents txtMorning4 As RichTextBox
     Friend WithEvents txtAfternoon1 As RichTextBox
     Friend WithEvents txtAfternoon2 As RichTextBox
     Friend WithEvents txtAfternoon3 As RichTextBox
@@ -1034,4 +993,15 @@ Partial Class FrmMain
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents menuStripResProfileManager As ToolStripMenuItem
     Friend WithEvents menuStripAbout As ToolStripMenuItem
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents TabControlMorning As TabControl
+    Friend WithEvents tabMorning1 As TabPage
+    Friend WithEvents tabMorning2 As TabPage
+    Friend WithEvents txtMorning2 As RichTextBox
+    Friend WithEvents tabMorning3 As TabPage
+    Friend WithEvents txtMorning3 As RichTextBox
+    Friend WithEvents tabMorning4 As TabPage
+    Friend WithEvents txtMorning4 As RichTextBox
+    Friend WithEvents lblMorning As Label
+    Friend WithEvents txtMorning1 As RichTextBox
 End Class
