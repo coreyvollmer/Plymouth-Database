@@ -8,36 +8,59 @@ Public Class FrmMain
         Console.WriteLine("Program started, initializing...")
         timeKeeper = New Timerr
         timeKeeper.StartTimer()
-        crypto = New CSPTripleDES("PlymouthCrossroads") 'If this argument is changed, all cryptography will become incompatible with legacy data
+        crypto = New CSPTripleDES("PlymouthCrossroads") 'If this argument is changed, all cryptography functions will become incompatible with legacy data
         Dim logInForm = New FrmSignIn
         logInForm.Show()
         CreateAccountStructure()
         'Application.Exit()
     End Sub
 
-    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles menuStripLogIn.Click
+    'MenuStrip Subroutines
+
+    'File, Log In
+    Private Sub Menu_LogIn_Click(sender As Object, e As EventArgs) Handles menuStripLogIn.Click
         Dim signInForm = New FrmSignIn
         signInForm.Show()
     End Sub
 
-    Private Sub MenuStripExit_Click(sender As Object, e As EventArgs) Handles menuStripExit.Click
+    'File, Exit
+    Private Sub Menu_Exit_Click(sender As Object, e As EventArgs) Handles menuStripExit.Click
+        Console.WriteLine("Exiting Application Now.")
         Application.Exit()
     End Sub
-    Private Sub MenuStripUserList_Click_1(sender As Object, e As EventArgs) Handles menuStripUserList.Click
+
+    'Admin, Staff User Manager
+    Private Sub Menu_StaffUserManager_Click(sender As Object, e As EventArgs) Handles menuStripStaffUserManager.Click
         If userList(currentID).isAdmin Then
-            Dim userListForm = New frmUserList
+            Dim userListForm = New frmStaffUserList
             userListForm.Show()
         End If
         If Not userList(currentID).isAdmin Then
-            MsgBox("You are not an administrator")
+            MsgBox("You are not an administrator.")
         End If
     End Sub
+
+    'Admin, Resident Profile Manager
+    Private Sub Menu_ResidentProfileManager_Click(sender As Object, e As EventArgs) Handles menuStripResProfileManager.Click
+        If userList(currentID).isAdmin Then
+            Dim residentManagerForm = New frmStaffUserList
+            residentManagerForm.Show()
+        End If
+        If Not userList(currentID).isAdmin Then
+            MsgBox("You are not an administrator.")
+        End If
+    End Sub
+
+    'Help, About
+    Private Sub Menu_About_Click(sender As Object, e As EventArgs) Handles menuStripAbout.Click
+
+    End Sub
+    'End MenuStrip Subroutines
 
     Private Sub MonthCalendar_DateSelected(sender As Object, e As DateRangeEventArgs) Handles monthCalendar.DateSelected
         selectedDay = monthCalendar.SelectionStart.ToString
         selectedDayArr = selectedDay.Split()
-        Console.WriteLine(selectedDayArr(0)) 'Sanity Check
-        'Console.WriteLine(selectedDayArr)
+        'Console.WriteLine(selectedDayArr(0)) 'Sanity Check
         ClearAllLogs()
         FillShiftLogs(selectedDayArr(0))
     End Sub
@@ -164,6 +187,7 @@ Public Class FrmMain
         nightTimer4.Stop()
         TxtChangeHandler(3, txtNight4.Text, txtNight4.Name, 3)
     End Sub
+
     'End Keypress timers
 
 End Class

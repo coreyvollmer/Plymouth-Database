@@ -15,6 +15,7 @@ Module modMain
     Public databaseRoot As String = "C:\Users\Corey Vollmer\"
     'Public databaseRoot As String = "C:\\Users\corey\"
     'Public databaseRoot2 As String = "\\PCSVR\Shared\db\"
+    Public resFilePath As String = databaseRoot + "Residents.dat"
     Public acctFilePath As String = databaseRoot + "Accounts.dat"
     Public shiftLogPath As String = databaseRoot + "Shift Logs\"
     Public currentID As Integer 'id of currently logged in user
@@ -403,6 +404,7 @@ Module modMain
         fileReader.Close()
     End Sub
 
+    'Creates staff database
     Public Sub CreateAccountStructure()
         If debug Then
             Console.WriteLine("Creating Account Structure... Time: " + CStr(timeKeeper.GetTime) + "ms")
@@ -436,6 +438,42 @@ Module modMain
                 If line(5) = "1" Then
                     userList(place).isAdmin = True
                 End If
+                If debug Then
+                    Console.WriteLine("Added user iD: " + CStr(userList(place).iD) + " Name: " + userList(place).GetFirstName + " " + userList(place).GetLastName)
+                End If
+            End If
+            place = place + 1
+        End While
+        fileReader.Close()
+    End Sub
+
+    Public Sub createResidentDataBase()
+        If debug Then
+            Console.WriteLine("Creating Resident Database... Time: " + CStr(timeKeeper.GetTime) + "ms")
+        End If
+
+        If Not File.Exists(resFilePath) Then 'This handles case when account.dat file is not found. Creates user admin with password admin
+            MsgBox("File error. New environment detected. Initializing...")
+            File.Create(resFilePath).Dispose()
+            Dim newWriter As System.IO.StreamWriter
+            newWriter = My.Computer.FileSystem.OpenTextFileWriter(resFilePath, False)
+            'newWriter.WriteLine("0 tDoKrrPineiXtyLMJAyOiA== tDoKrrPineiXtyLMJAyOiA== tDoKrrPineiXtyLMJAyOiA== tDoKrrPineiXtyLMJAyOiA== 1")
+            newWriter.Close()
+        End If
+        idCount = File.ReadAllLines(resFilePath).Length()
+        ReDim userList(idCount)
+        Dim fileReader As System.IO.StreamReader
+        fileReader = My.Computer.FileSystem.OpenTextFileReader(resFilePath)
+        Dim place As Integer = 0
+        Dim line(0 To 5) As String
+        While Not fileReader.EndOfStream
+            If line IsNot "" Then
+                line = fileReader.ReadLine().Split()
+                userList(place).iD = CInt((line(0)))
+                userList(place).SetUserName(crypto.DecryptData(line(1)))
+                userList(place).SetPassword(crypto.DecryptData(line(2)))
+                userList(place).SetFirstName(crypto.DecryptData(line(3)))
+                userList(place).SetLastName(crypto.DecryptData(line(4)))
                 If debug Then
                     Console.WriteLine("Added user iD: " + CStr(userList(place).iD) + " Name: " + userList(place).GetFirstName + " " + userList(place).GetLastName)
                 End If

@@ -24,22 +24,28 @@ Partial Class FrmMain
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMain))
-        Dim ListViewItem4 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("test")
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Dim ListViewItem1 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("test")
+        Me.MenuStrip = New System.Windows.Forms.MenuStrip()
+        Me.menuStripFile = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuStripLogIn = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuStripExit = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuStripAdmin = New System.Windows.Forms.ToolStripMenuItem()
-        Me.menuStripUserList = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuStripStaffUserManager = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuStripResProfileManager = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuStripHelp = New System.Windows.Forms.ToolStripMenuItem()
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.tabProgressNotes = New System.Windows.Forms.TabPage()
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.TabControl2 = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.MonthCalendar1 = New System.Windows.Forms.MonthCalendar()
         Me.goalPlanPanel = New System.Windows.Forms.Panel()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ListView1 = New System.Windows.Forms.ListView()
@@ -104,14 +110,12 @@ Partial Class FrmMain
         Me.afternoonTimer2 = New System.Windows.Forms.Timer(Me.components)
         Me.afternoonTimer3 = New System.Windows.Forms.Timer(Me.components)
         Me.afternoonTimer4 = New System.Windows.Forms.Timer(Me.components)
-        Me.TabControl2 = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.Panel8 = New System.Windows.Forms.Panel()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.MenuStrip1.SuspendLayout()
+        Me.menuStripAbout = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MenuStrip.SuspendLayout()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabProgressNotes.SuspendLayout()
+        Me.Panel8.SuspendLayout()
+        Me.TabControl2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabShiftLogs.SuspendLayout()
         Me.Panel7.SuspendLayout()
@@ -137,56 +141,61 @@ Partial Class FrmMain
         Me.tabAfternoon4.SuspendLayout()
         Me.welcomePage.SuspendLayout()
         Me.TabControl1.SuspendLayout()
-        Me.TabControl2.SuspendLayout()
-        Me.Panel8.SuspendLayout()
         Me.SuspendLayout()
         '
-        'MenuStrip1
+        'MenuStrip
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.menuStripAdmin, Me.HelpToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1008, 24)
-        Me.MenuStrip1.TabIndex = 0
-        Me.MenuStrip1.Text = "MenuStrip1"
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuStripFile, Me.menuStripAdmin, Me.menuStripHelp})
+        Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip.Name = "MenuStrip"
+        Me.MenuStrip.Size = New System.Drawing.Size(1008, 24)
+        Me.MenuStrip.TabIndex = 0
+        Me.MenuStrip.Text = "MenuStrip"
         '
-        'FileToolStripMenuItem
+        'menuStripFile
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuStripLogIn, Me.menuStripExit})
-        Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
-        Me.FileToolStripMenuItem.Text = "File"
+        Me.menuStripFile.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuStripLogIn, Me.menuStripExit})
+        Me.menuStripFile.Name = "menuStripFile"
+        Me.menuStripFile.Size = New System.Drawing.Size(37, 20)
+        Me.menuStripFile.Text = "File"
         '
         'menuStripLogIn
         '
         Me.menuStripLogIn.Name = "menuStripLogIn"
-        Me.menuStripLogIn.Size = New System.Drawing.Size(107, 22)
+        Me.menuStripLogIn.Size = New System.Drawing.Size(152, 22)
         Me.menuStripLogIn.Text = "Log In"
         '
         'menuStripExit
         '
         Me.menuStripExit.Name = "menuStripExit"
-        Me.menuStripExit.Size = New System.Drawing.Size(107, 22)
+        Me.menuStripExit.Size = New System.Drawing.Size(152, 22)
         Me.menuStripExit.Text = "Exit"
         '
         'menuStripAdmin
         '
-        Me.menuStripAdmin.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuStripUserList})
+        Me.menuStripAdmin.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuStripStaffUserManager, Me.menuStripResProfileManager})
         Me.menuStripAdmin.Name = "menuStripAdmin"
         Me.menuStripAdmin.Size = New System.Drawing.Size(55, 20)
         Me.menuStripAdmin.Text = "Admin"
         '
-        'menuStripUserList
+        'menuStripStaffUserManager
         '
-        Me.menuStripUserList.Name = "menuStripUserList"
-        Me.menuStripUserList.Size = New System.Drawing.Size(118, 22)
-        Me.menuStripUserList.Text = "User List"
+        Me.menuStripStaffUserManager.Name = "menuStripStaffUserManager"
+        Me.menuStripStaffUserManager.Size = New System.Drawing.Size(206, 22)
+        Me.menuStripStaffUserManager.Text = "Staff User Manager"
         '
-        'HelpToolStripMenuItem
+        'menuStripResProfileManager
         '
-        Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
-        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
-        Me.HelpToolStripMenuItem.Text = "Help"
+        Me.menuStripResProfileManager.Name = "menuStripResProfileManager"
+        Me.menuStripResProfileManager.Size = New System.Drawing.Size(206, 22)
+        Me.menuStripResProfileManager.Text = "Resident Profile Manager"
+        '
+        'menuStripHelp
+        '
+        Me.menuStripHelp.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuStripAbout})
+        Me.menuStripHelp.Name = "menuStripHelp"
+        Me.menuStripHelp.Size = New System.Drawing.Size(44, 20)
+        Me.menuStripHelp.Text = "Help"
         '
         'tabProgressNotes
         '
@@ -205,6 +214,83 @@ Partial Class FrmMain
         Me.tabProgressNotes.TabIndex = 1
         Me.tabProgressNotes.Text = "Progress Notes"
         Me.tabProgressNotes.UseVisualStyleBackColor = True
+        '
+        'Panel8
+        '
+        Me.Panel8.Controls.Add(Me.Label8)
+        Me.Panel8.Controls.Add(Me.Label2)
+        Me.Panel8.Controls.Add(Me.Label3)
+        Me.Panel8.Controls.Add(Me.Label6)
+        Me.Panel8.Location = New System.Drawing.Point(194, 292)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(227, 149)
+        Me.Panel8.TabIndex = 10
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(12, 79)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(106, 13)
+        Me.Label8.TabIndex = 6
+        Me.Label8.Text = "Ziggy Buck Balance:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(12, 10)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(29, 13)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Age:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(12, 33)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(82, 13)
+        Me.Label3.TabIndex = 4
+        Me.Label3.Text = "Resident Since:"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(12, 57)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(48, 13)
+        Me.Label6.TabIndex = 5
+        Me.Label6.Text = "Birthday:"
+        '
+        'TabControl2
+        '
+        Me.TabControl2.Controls.Add(Me.TabPage1)
+        Me.TabControl2.Controls.Add(Me.TabPage2)
+        Me.TabControl2.Location = New System.Drawing.Point(425, 257)
+        Me.TabControl2.Name = "TabControl2"
+        Me.TabControl2.SelectedIndex = 0
+        Me.TabControl2.Size = New System.Drawing.Size(572, 348)
+        Me.TabControl2.TabIndex = 9
+        '
+        'TabPage1
+        '
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(564, 322)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "Interests"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'TabPage2
+        '
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(564, 322)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Ziggy Bucks"
+        Me.TabPage2.UseVisualStyleBackColor = True
         '
         'Label7
         '
@@ -231,33 +317,6 @@ Partial Class FrmMain
         Me.goalPlanPanel.TabIndex = 6
         Me.goalPlanPanel.Tag = ""
         '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(12, 57)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(48, 13)
-        Me.Label6.TabIndex = 5
-        Me.Label6.Text = "Birthday:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(12, 33)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(82, 13)
-        Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Resident Since:"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 10)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(29, 13)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Age:"
-        '
         'Label1
         '
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Top
@@ -282,7 +341,7 @@ Partial Class FrmMain
         '
         'ListView1
         '
-        Me.ListView1.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem4})
+        Me.ListView1.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem1})
         Me.ListView1.Location = New System.Drawing.Point(6, 6)
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(182, 599)
@@ -824,55 +883,11 @@ Partial Class FrmMain
         '
         Me.afternoonTimer4.Interval = 5000
         '
-        'TabControl2
+        'menuStripAbout
         '
-        Me.TabControl2.Controls.Add(Me.TabPage1)
-        Me.TabControl2.Controls.Add(Me.TabPage2)
-        Me.TabControl2.Location = New System.Drawing.Point(425, 257)
-        Me.TabControl2.Name = "TabControl2"
-        Me.TabControl2.SelectedIndex = 0
-        Me.TabControl2.Size = New System.Drawing.Size(572, 348)
-        Me.TabControl2.TabIndex = 9
-        '
-        'TabPage1
-        '
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(564, 322)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Interests"
-        Me.TabPage1.UseVisualStyleBackColor = True
-        '
-        'TabPage2
-        '
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(564, 322)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Ziggy Bucks"
-        Me.TabPage2.UseVisualStyleBackColor = True
-        '
-        'Panel8
-        '
-        Me.Panel8.Controls.Add(Me.Label8)
-        Me.Panel8.Controls.Add(Me.Label2)
-        Me.Panel8.Controls.Add(Me.Label3)
-        Me.Panel8.Controls.Add(Me.Label6)
-        Me.Panel8.Location = New System.Drawing.Point(194, 292)
-        Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(227, 149)
-        Me.Panel8.TabIndex = 10
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(12, 79)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(69, 13)
-        Me.Label8.TabIndex = 6
-        Me.Label8.Text = "Ziggy Bucks:"
+        Me.menuStripAbout.Name = "menuStripAbout"
+        Me.menuStripAbout.Size = New System.Drawing.Size(152, 22)
+        Me.menuStripAbout.Text = "About"
         '
         'FrmMain
         '
@@ -881,8 +896,8 @@ Partial Class FrmMain
         Me.ClientSize = New System.Drawing.Size(1008, 661)
         Me.ControlBox = False
         Me.Controls.Add(Me.TabControl1)
-        Me.Controls.Add(Me.MenuStrip1)
-        Me.MainMenuStrip = Me.MenuStrip1
+        Me.Controls.Add(Me.MenuStrip)
+        Me.MainMenuStrip = Me.MenuStrip
         Me.MaximumSize = New System.Drawing.Size(1024, 700)
         Me.MinimumSize = New System.Drawing.Size(1024, 700)
         Me.Name = "FrmMain"
@@ -890,11 +905,14 @@ Partial Class FrmMain
         Me.Text = "Plymouth Crossroads Database"
         Me.TransparencyKey = System.Drawing.Color.Maroon
         Me.WindowState = System.Windows.Forms.FormWindowState.Minimized
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
+        Me.MenuStrip.ResumeLayout(False)
+        Me.MenuStrip.PerformLayout()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tabProgressNotes.ResumeLayout(False)
         Me.tabProgressNotes.PerformLayout()
+        Me.Panel8.ResumeLayout(False)
+        Me.Panel8.PerformLayout()
+        Me.TabControl2.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tabShiftLogs.ResumeLayout(False)
         Me.Panel7.ResumeLayout(False)
@@ -925,21 +943,18 @@ Partial Class FrmMain
         Me.tabAfternoon4.ResumeLayout(False)
         Me.welcomePage.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
-        Me.TabControl2.ResumeLayout(False)
-        Me.Panel8.ResumeLayout(False)
-        Me.Panel8.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MenuStrip As MenuStrip
+    Friend WithEvents menuStripFile As ToolStripMenuItem
     Friend WithEvents menuStripLogIn As ToolStripMenuItem
     Friend WithEvents menuStripExit As ToolStripMenuItem
     Friend WithEvents menuStripAdmin As ToolStripMenuItem
-    Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents menuStripUserList As ToolStripMenuItem
+    Friend WithEvents menuStripHelp As ToolStripMenuItem
+    Friend WithEvents menuStripStaffUserManager As ToolStripMenuItem
     Friend WithEvents BindingSource1 As BindingSource
     Friend WithEvents tabProgressNotes As TabPage
     Friend WithEvents tabShiftLogs As TabPage
@@ -1017,4 +1032,6 @@ Partial Class FrmMain
     Friend WithEvents TabControl2 As TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents menuStripResProfileManager As ToolStripMenuItem
+    Friend WithEvents menuStripAbout As ToolStripMenuItem
 End Class
