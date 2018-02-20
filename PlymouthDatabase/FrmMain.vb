@@ -6,7 +6,7 @@ Public Class FrmMain
 
     Public Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Console.WriteLine("Program started, initializing...")
-        timeKeeper = New saveTimer
+        timeKeeper = New Timerr
         timeKeeper.StartTimer()
         crypto = New CSPTripleDES("PlymouthCrossroads") 'If this argument is changed, all cryptography functions will become incompatible with legacy data
         Dim logInForm = New FrmSignIn
@@ -16,6 +16,7 @@ Public Class FrmMain
     End Sub
 
     'MenuStrip Subroutines
+
     'File, Log In
     Private Sub Menu_LogIn_Click(sender As Object, e As EventArgs) Handles menuStripLogIn.Click
         Dim signInForm = New FrmSignIn
@@ -25,30 +26,29 @@ Public Class FrmMain
     'File, Exit
     Private Sub Menu_Exit_Click(sender As Object, e As EventArgs) Handles menuStripExit.Click
         Console.WriteLine("Exiting Application Now.")
-        Application.Exit()
+        'Application.Exit()
+        Environment.Exit(1)
     End Sub
 
     'Admin, Staff User Manager
     Private Sub Menu_StaffUserManager_Click(sender As Object, e As EventArgs) Handles menuStripStaffUserManager.Click
         If userList(currentID).isAdmin Then
-            Dim userListForm = New frmStaffUserManager
+            Dim userListForm = New frmStaffUserList
             userListForm.Show()
-        ElseIf Not userList(currentID).isAdmin Then
+        End If
+        If Not userList(currentID).isAdmin Then
             MsgBox("You are not an administrator.")
-        Else
-            MsgBox("User has an undefined administrator property")
         End If
     End Sub
 
     'Admin, Resident Profile Manager
     Private Sub Menu_ResidentProfileManager_Click(sender As Object, e As EventArgs) Handles menuStripResProfileManager.Click
         If userList(currentID).isAdmin Then
-            Dim residentManagerForm = New frmResidentManager
+            Dim residentManagerForm = New frmStaffUserList
             residentManagerForm.Show()
-        ElseIf Not userList(currentID).isAdmin Then
+        End If
+        If Not userList(currentID).isAdmin Then
             MsgBox("You are not an administrator.")
-        Else
-            MsgBox("User has an undefined administrator property")
         End If
     End Sub
 
@@ -188,6 +188,12 @@ Public Class FrmMain
         nightTimer4.Stop()
         TxtChangeHandler(3, txtNight4.Text, txtNight4.Name, 3)
     End Sub
+
+    Private Sub tBarTime_Scroll(sender As Object, e As EventArgs) Handles tBarTime.Scroll
+
+    End Sub
+
+
     'End Keypress timers
 
 End Class

@@ -1,4 +1,4 @@
-﻿Public Class saveTimer
+﻿Public Class Timerr
 
     Public stopWatch As Stopwatch
 

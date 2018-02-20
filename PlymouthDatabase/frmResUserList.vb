@@ -1,4 +1,4 @@
-﻿Public Class frmResidentManager
+﻿Public Class frmResUserList
     Private Sub lstUsers_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstUsers.SelectedIndexChanged
 
     End Sub

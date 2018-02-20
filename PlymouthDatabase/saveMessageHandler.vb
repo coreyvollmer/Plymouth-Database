@@ -4,7 +4,7 @@ Option Strict On
 Public Class SaveMessageHandler
     Public Sub Start()
         FrmMain.lblSaveMsg.Visible = True
-        Dim timer = New saveTimer
+        Dim timer = New Timerr
         Dim strTime As String
         timer.StartTimer()
         While (CInt(timer.GetTime) < 60000)

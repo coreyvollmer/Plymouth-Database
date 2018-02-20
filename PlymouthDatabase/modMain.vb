@@ -4,15 +4,17 @@ Option Strict On
 Imports System.IO
 
 Module modMain
+    'TODO map all debugging to this dim "debug"
     'Public debug As Boolean = True
-    Public timeKeeper As saveTimer
+    Public timeKeeper As Timerr
     Public crypto As CSPTripleDES
-    Public tick As Integer = 25 'ms
+    Public tick As Integer = 25
     Public userList() As User
-    Public residentList() As Resident
     Public idCount As Integer
     Public iDsUsed As List(Of Integer)
     Public databaseRoot As String = "C:\Users\Corey Vollmer\"
+    'Public databaseRoot As String = "C:\\Users\corey\"
+    'Public databaseRoot2 As String = "\\PCSVR\Shared\db\"
     Public resFilePath As String = databaseRoot + "Residents.dat"
     Public acctFilePath As String = databaseRoot + "Accounts.dat"
     Public shiftLogPath As String = databaseRoot + "Shift Logs\"
@@ -102,40 +104,6 @@ Module modMain
         End Sub
     End Structure
 
-    Structure Resident
-        Private firstName, lastName As String
-        Private goals, interests As Collection
-        Private birthday, intakeDate As Date
-        Public iD As Integer
-        Private ziggyBalance As Integer
-
-        Public Function GetInitials() As String
-            Dim fNameArray As Char() = CType(GetFirstName(), Char())
-            Dim lNameArray As Char() = CType(GetLastName(), Char())
-            Dim initials(2) As Char
-            initials(0) = fNameArray(0)
-            initials(1) = lNameArray(0)
-            Return initials
-        End Function
-
-        Public Function GetFirstName() As String
-            Return firstName
-        End Function
-
-        Public Function GetLastName() As String
-            Return lastName
-        End Function
-
-        Public Sub SetFirstName(fName As String)
-            firstName = fName
-        End Sub
-
-        Public Sub SetLastName(lName As String)
-            lastName = lName
-        End Sub
-
-    End Structure
-
     Structure DateForm
         Public Day As UInt16
         Public Month As String
@@ -155,7 +123,7 @@ Module modMain
         If explicit Then
             Console.WriteLine("Adjusting time")
         End If
-        Dim timer = New saveTimer
+        Dim timer = New Timerr
         timer.StartTimer()
         Dim sliderVal As Integer
         While (True)
@@ -438,8 +406,8 @@ Module modMain
 
     'Creates staff database
     Public Sub CreateAccountStructure()
-        Dim consoleDebug As Boolean = True
-        If consoleDebug Then
+        Dim debug As Boolean = True
+        If Debug Then
             Console.WriteLine("Creating Account Structure... Time: " + CStr(timeKeeper.GetTime) + "ms")
         End If
 
@@ -471,7 +439,7 @@ Module modMain
                 If line(5) = "1" Then
                     userList(place).isAdmin = True
                 End If
-                If consoleDebug Then
+                If Debug Then
                     Console.WriteLine("Added user iD: " + CStr(userList(place).iD) + " Name: " + userList(place).GetFirstName + " " + userList(place).GetLastName)
                 End If
             End If
@@ -481,13 +449,21 @@ Module modMain
     End Sub
 
     Public Sub createResidentDataBase()
-        Dim consoleDebug As Boolean = True
+        Dim debug As Boolean = True
+        If Debug Then
+            Console.WriteLine("Creating Resident Database... Time: " + CStr(timeKeeper.GetTime) + "ms")
+        End If
+
         If Not File.Exists(resFilePath) Then 'This handles case when account.dat file is not found. Creates user admin with password admin
             MsgBox("File error. New environment detected. Initializing...")
             File.Create(resFilePath).Dispose()
+            Dim newWriter As System.IO.StreamWriter
+            newWriter = My.Computer.FileSystem.OpenTextFileWriter(resFilePath, False)
+            'newWriter.WriteLine("0 tDoKrrPineiXtyLMJAyOiA== tDoKrrPineiXtyLMJAyOiA== tDoKrrPineiXtyLMJAyOiA== tDoKrrPineiXtyLMJAyOiA== 1")
+            newWriter.Close()
         End If
         idCount = File.ReadAllLines(resFilePath).Length()
-        ReDim residentList(idCount)
+        ReDim userList(idCount)
         Dim fileReader As System.IO.StreamReader
         fileReader = My.Computer.FileSystem.OpenTextFileReader(resFilePath)
         Dim place As Integer = 0
@@ -500,8 +476,8 @@ Module modMain
                 userList(place).SetPassword(crypto.DecryptData(line(2)))
                 userList(place).SetFirstName(crypto.DecryptData(line(3)))
                 userList(place).SetLastName(crypto.DecryptData(line(4)))
-                If consoleDebug Then
-                    ' Console.WriteLine("Added user iD: " + CStr(userList(place).iD) + " Name: " + userList(place).GetFirstName + " " + userList(place).GetLastName)
+                If Debug Then
+                    Console.WriteLine("Added user iD: " + CStr(userList(place).iD) + " Name: " + userList(place).GetFirstName + " " + userList(place).GetLastName)
                 End If
             End If
             place = place + 1
@@ -509,6 +485,7 @@ Module modMain
         fileReader.Close()
     End Sub
 
+    'Empty??
     Public Sub ClearAllLogs()
         FrmMain.txtMorning1.Text = ""
         FrmMain.tabMorning1.Text = "Day Log"

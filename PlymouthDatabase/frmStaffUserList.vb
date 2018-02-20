@@ -3,7 +3,7 @@ Option Strict On
 
 Imports System.IO
 
-Public Class frmStaffUserManager
+Public Class frmStaffUserList
 
     Private Sub frmUserList_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CreateAccountStructure()

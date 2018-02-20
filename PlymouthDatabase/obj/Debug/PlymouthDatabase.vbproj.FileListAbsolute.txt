@@ -15,8 +15,6 @@ C:\Users\Corey Vollmer\Documents\Coding\VB.net\PlymouthDatabase-master\PlymouthD
 C:\Users\Corey Vollmer\Documents\Coding\VB.net\PlymouthDatabase-master\PlymouthDatabase\bin\Debug\PlymouthDatabase.exe
 C:\Users\Corey Vollmer\Documents\Coding\VB.net\PlymouthDatabase-master\PlymouthDatabase\bin\Debug\PlymouthDatabase.pdb
 C:\Users\Corey Vollmer\Documents\Coding\VB.net\PlymouthDatabase-master\PlymouthDatabase\bin\Debug\PlymouthDatabase.xml
-C:\Users\Corey Vollmer\Documents\Coding\VB.net\PlymouthDatabase-master\PlymouthDatabase\bin\Debug\PlymouthDatabase.exe.CodeAnalysisLog.xml
-C:\Users\Corey Vollmer\Documents\Coding\VB.net\PlymouthDatabase-master\PlymouthDatabase\bin\Debug\PlymouthDatabase.exe.lastcodeanalysissucceeded
 C:\Users\Corey Vollmer\Documents\Coding\VB.net\PlymouthDatabase-master\PlymouthDatabase\obj\Debug\PlymouthDatabase.frmResUserList.resources
 C:\Users\Corey Vollmer\Documents\Coding\VB.net\PlymouthDatabase-master\PlymouthDatabase\obj\Debug\PlymouthDatabase.FrmSignIn.resources
 C:\Users\Corey Vollmer\Documents\Coding\VB.net\PlymouthDatabase-master\PlymouthDatabase\obj\Debug\PlymouthDatabase.FrmMain.resources
@@ -26,17 +24,8 @@ C:\Users\Corey Vollmer\Documents\Coding\VB.net\PlymouthDatabase-master\PlymouthD
 C:\Users\Corey Vollmer\Documents\Coding\VB.net\PlymouthDatabase-master\PlymouthDatabase\obj\Debug\PlymouthDatabase.exe
 C:\Users\Corey Vollmer\Documents\Coding\VB.net\PlymouthDatabase-master\PlymouthDatabase\obj\Debug\PlymouthDatabase.xml
 C:\Users\Corey Vollmer\Documents\Coding\VB.net\PlymouthDatabase-master\PlymouthDatabase\obj\Debug\PlymouthDatabase.pdb
+C:\Users\Corey Vollmer\Documents\Coding\VB.net\PlymouthDatabase-master\PlymouthDatabase\obj\Debug\PlymouthDatabase.vbprojResolveAssemblyReference.cache
 C:\Users\Corey Vollmer\Documents\Coding\VB.net\Git\PlymouthDatabase\bin\Debug\PlymouthDatabase.exe.config
 C:\Users\Corey Vollmer\Documents\Coding\VB.net\Git\PlymouthDatabase\obj\Debug\PlymouthDatabase.exe
 C:\Users\Corey Vollmer\Documents\Coding\VB.net\Git\PlymouthDatabase\obj\Debug\PlymouthDatabase.xml
 C:\Users\Corey Vollmer\Documents\Coding\VB.net\Git\PlymouthDatabase\obj\Debug\PlymouthDatabase.pdb
-C:\Users\Corey Vollmer\Documents\Coding\VB.net\Git\PlymouthDatabase\obj\Debug\PlymouthDatabase.vbprojResolveAssemblyReference.cache
-C:\Users\Corey Vollmer\Documents\Coding\VB.net\Git\PlymouthDatabase\obj\Debug\PlymouthDatabase.frmResidentManager.resources
-C:\Users\Corey Vollmer\Documents\Coding\VB.net\Git\PlymouthDatabase\obj\Debug\PlymouthDatabase.FrmSignIn.resources
-C:\Users\Corey Vollmer\Documents\Coding\VB.net\Git\PlymouthDatabase\obj\Debug\PlymouthDatabase.FrmMain.resources
-C:\Users\Corey Vollmer\Documents\Coding\VB.net\Git\PlymouthDatabase\obj\Debug\PlymouthDatabase.frmStaffUserManager.resources
-C:\Users\Corey Vollmer\Documents\Coding\VB.net\Git\PlymouthDatabase\obj\Debug\PlymouthDatabase.Resources.resources
-C:\Users\Corey Vollmer\Documents\Coding\VB.net\Git\PlymouthDatabase\obj\Debug\PlymouthDatabase.vbproj.GenerateResource.Cache
-C:\Users\Corey Vollmer\Documents\Coding\VB.net\Git\PlymouthDatabase\bin\Debug\PlymouthDatabase.exe
-C:\Users\Corey Vollmer\Documents\Coding\VB.net\Git\PlymouthDatabase\bin\Debug\PlymouthDatabase.pdb
-C:\Users\Corey Vollmer\Documents\Coding\VB.net\Git\PlymouthDatabase\bin\Debug\PlymouthDatabase.xml

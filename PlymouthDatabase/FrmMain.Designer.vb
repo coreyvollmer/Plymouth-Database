@@ -108,7 +108,6 @@ Partial Class FrmMain
         Me.afternoonTimer2 = New System.Windows.Forms.Timer(Me.components)
         Me.afternoonTimer3 = New System.Windows.Forms.Timer(Me.components)
         Me.afternoonTimer4 = New System.Windows.Forms.Timer(Me.components)
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.MenuStrip.SuspendLayout()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabProgressNotes.SuspendLayout()
@@ -221,7 +220,6 @@ Partial Class FrmMain
         '
         'Panel8
         '
-        Me.Panel8.Controls.Add(Me.Label9)
         Me.Panel8.Controls.Add(Me.Label8)
         Me.Panel8.Controls.Add(Me.Label2)
         Me.Panel8.Controls.Add(Me.Label3)
@@ -234,40 +232,36 @@ Partial Class FrmMain
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(12, 117)
+        Me.Label8.Location = New System.Drawing.Point(12, 79)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(131, 16)
+        Me.Label8.Size = New System.Drawing.Size(106, 13)
         Me.Label8.TabIndex = 6
         Me.Label8.Text = "Ziggy Buck Balance:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(12, 36)
+        Me.Label2.Location = New System.Drawing.Point(12, 10)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(36, 16)
+        Me.Label2.Size = New System.Drawing.Size(29, 13)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Age:"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(12, 91)
+        Me.Label3.Location = New System.Drawing.Point(12, 33)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(79, 16)
+        Me.Label3.Size = New System.Drawing.Size(82, 13)
         Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Intake Date:"
+        Me.Label3.Text = "Resident Since:"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(12, 64)
+        Me.Label6.Location = New System.Drawing.Point(12, 57)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(60, 16)
+        Me.Label6.Size = New System.Drawing.Size(48, 13)
         Me.Label6.TabIndex = 5
         Me.Label6.Text = "Birthday:"
         '
@@ -377,17 +371,17 @@ Partial Class FrmMain
         'Panel7
         '
         Me.Panel7.Controls.Add(Me.tBarTime)
-        Me.Panel7.Location = New System.Drawing.Point(6, 163)
+        Me.Panel7.Location = New System.Drawing.Point(4, 164)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(988, 33)
+        Me.Panel7.Size = New System.Drawing.Size(996, 33)
         Me.Panel7.TabIndex = 7
         '
         'tBarTime
         '
-        Me.tBarTime.Location = New System.Drawing.Point(0, 0)
+        Me.tBarTime.Location = New System.Drawing.Point(-1, 0)
         Me.tBarTime.Maximum = 94
         Me.tBarTime.Name = "tBarTime"
-        Me.tBarTime.Size = New System.Drawing.Size(988, 45)
+        Me.tBarTime.Size = New System.Drawing.Size(997, 45)
         Me.tBarTime.TabIndex = 7
         Me.tBarTime.TabStop = False
         Me.tBarTime.TickStyle = System.Windows.Forms.TickStyle.TopLeft
@@ -467,9 +461,9 @@ Partial Class FrmMain
         '
         Me.Panel5.Controls.Add(Me.TabControlOvernight)
         Me.Panel5.Controls.Add(Me.lblOvernight)
-        Me.Panel5.Location = New System.Drawing.Point(6, 198)
+        Me.Panel5.Location = New System.Drawing.Point(4, 199)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(324, 400)
+        Me.Panel5.Size = New System.Drawing.Size(329, 400)
         Me.Panel5.TabIndex = 4
         '
         'TabControlOvernight
@@ -481,7 +475,7 @@ Partial Class FrmMain
         Me.TabControlOvernight.Location = New System.Drawing.Point(3, 28)
         Me.TabControlOvernight.Name = "TabControlOvernight"
         Me.TabControlOvernight.SelectedIndex = 0
-        Me.TabControlOvernight.Size = New System.Drawing.Size(318, 369)
+        Me.TabControlOvernight.Size = New System.Drawing.Size(323, 369)
         Me.TabControlOvernight.TabIndex = 7
         '
         'tabNight1
@@ -489,7 +483,7 @@ Partial Class FrmMain
         Me.tabNight1.Controls.Add(Me.txtNight1)
         Me.tabNight1.Location = New System.Drawing.Point(4, 22)
         Me.tabNight1.Name = "tabNight1"
-        Me.tabNight1.Size = New System.Drawing.Size(310, 343)
+        Me.tabNight1.Size = New System.Drawing.Size(315, 343)
         Me.tabNight1.TabIndex = 0
         Me.tabNight1.Text = "Overnight Log"
         Me.tabNight1.UseVisualStyleBackColor = True
@@ -499,7 +493,7 @@ Partial Class FrmMain
         Me.txtNight1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtNight1.Location = New System.Drawing.Point(0, 0)
         Me.txtNight1.Name = "txtNight1"
-        Me.txtNight1.Size = New System.Drawing.Size(310, 343)
+        Me.txtNight1.Size = New System.Drawing.Size(315, 343)
         Me.txtNight1.TabIndex = 0
         Me.txtNight1.Text = ""
         '
@@ -508,7 +502,7 @@ Partial Class FrmMain
         Me.tabNight2.Controls.Add(Me.txtNight2)
         Me.tabNight2.Location = New System.Drawing.Point(4, 22)
         Me.tabNight2.Name = "tabNight2"
-        Me.tabNight2.Size = New System.Drawing.Size(310, 343)
+        Me.tabNight2.Size = New System.Drawing.Size(315, 343)
         Me.tabNight2.TabIndex = 1
         Me.tabNight2.Text = "Empty"
         Me.tabNight2.UseVisualStyleBackColor = True
@@ -518,7 +512,7 @@ Partial Class FrmMain
         Me.txtNight2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtNight2.Location = New System.Drawing.Point(0, 0)
         Me.txtNight2.Name = "txtNight2"
-        Me.txtNight2.Size = New System.Drawing.Size(310, 343)
+        Me.txtNight2.Size = New System.Drawing.Size(315, 343)
         Me.txtNight2.TabIndex = 0
         Me.txtNight2.Text = ""
         '
@@ -527,7 +521,7 @@ Partial Class FrmMain
         Me.tabNight3.Controls.Add(Me.txtNight3)
         Me.tabNight3.Location = New System.Drawing.Point(4, 22)
         Me.tabNight3.Name = "tabNight3"
-        Me.tabNight3.Size = New System.Drawing.Size(310, 343)
+        Me.tabNight3.Size = New System.Drawing.Size(315, 343)
         Me.tabNight3.TabIndex = 2
         Me.tabNight3.Text = "Empty"
         Me.tabNight3.UseVisualStyleBackColor = True
@@ -537,7 +531,7 @@ Partial Class FrmMain
         Me.txtNight3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtNight3.Location = New System.Drawing.Point(0, 0)
         Me.txtNight3.Name = "txtNight3"
-        Me.txtNight3.Size = New System.Drawing.Size(310, 343)
+        Me.txtNight3.Size = New System.Drawing.Size(315, 343)
         Me.txtNight3.TabIndex = 0
         Me.txtNight3.Text = ""
         '
@@ -546,7 +540,7 @@ Partial Class FrmMain
         Me.tabNight4.Controls.Add(Me.txtNight4)
         Me.tabNight4.Location = New System.Drawing.Point(4, 22)
         Me.tabNight4.Name = "tabNight4"
-        Me.tabNight4.Size = New System.Drawing.Size(310, 343)
+        Me.tabNight4.Size = New System.Drawing.Size(315, 343)
         Me.tabNight4.TabIndex = 3
         Me.tabNight4.Text = "Empty"
         Me.tabNight4.UseVisualStyleBackColor = True
@@ -556,7 +550,7 @@ Partial Class FrmMain
         Me.txtNight4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtNight4.Location = New System.Drawing.Point(0, 0)
         Me.txtNight4.Name = "txtNight4"
-        Me.txtNight4.Size = New System.Drawing.Size(310, 343)
+        Me.txtNight4.Size = New System.Drawing.Size(315, 343)
         Me.txtNight4.TabIndex = 0
         Me.txtNight4.Text = ""
         '
@@ -564,7 +558,7 @@ Partial Class FrmMain
         '
         Me.lblOvernight.AutoSize = True
         Me.lblOvernight.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblOvernight.Location = New System.Drawing.Point(75, 1)
+        Me.lblOvernight.Location = New System.Drawing.Point(76, 1)
         Me.lblOvernight.Name = "lblOvernight"
         Me.lblOvernight.Size = New System.Drawing.Size(165, 32)
         Me.lblOvernight.TabIndex = 6
@@ -574,9 +568,9 @@ Partial Class FrmMain
         '
         Me.Panel1.Controls.Add(Me.TabControlMorning)
         Me.Panel1.Controls.Add(Me.lblMorning)
-        Me.Panel1.Location = New System.Drawing.Point(339, 198)
+        Me.Panel1.Location = New System.Drawing.Point(336, 199)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(324, 400)
+        Me.Panel1.Size = New System.Drawing.Size(329, 400)
         Me.Panel1.TabIndex = 4
         '
         'TabControlMorning
@@ -585,10 +579,10 @@ Partial Class FrmMain
         Me.TabControlMorning.Controls.Add(Me.tabMorning2)
         Me.TabControlMorning.Controls.Add(Me.tabMorning3)
         Me.TabControlMorning.Controls.Add(Me.tabMorning4)
-        Me.TabControlMorning.Location = New System.Drawing.Point(3, 28)
+        Me.TabControlMorning.Location = New System.Drawing.Point(5, 27)
         Me.TabControlMorning.Name = "TabControlMorning"
         Me.TabControlMorning.SelectedIndex = 0
-        Me.TabControlMorning.Size = New System.Drawing.Size(318, 369)
+        Me.TabControlMorning.Size = New System.Drawing.Size(321, 369)
         Me.TabControlMorning.TabIndex = 6
         '
         'tabMorning1
@@ -597,16 +591,16 @@ Partial Class FrmMain
         Me.tabMorning1.Controls.Add(Me.txtMorning1)
         Me.tabMorning1.Location = New System.Drawing.Point(4, 22)
         Me.tabMorning1.Name = "tabMorning1"
-        Me.tabMorning1.Size = New System.Drawing.Size(310, 343)
+        Me.tabMorning1.Size = New System.Drawing.Size(313, 343)
         Me.tabMorning1.TabIndex = 0
         Me.tabMorning1.Text = "Day Log"
         Me.tabMorning1.UseVisualStyleBackColor = True
         '
         'txtMorning1
         '
-        Me.txtMorning1.Location = New System.Drawing.Point(3, 0)
+        Me.txtMorning1.Location = New System.Drawing.Point(0, 0)
         Me.txtMorning1.Name = "txtMorning1"
-        Me.txtMorning1.Size = New System.Drawing.Size(310, 339)
+        Me.txtMorning1.Size = New System.Drawing.Size(318, 339)
         Me.txtMorning1.TabIndex = 0
         Me.txtMorning1.Text = ""
         '
@@ -615,7 +609,7 @@ Partial Class FrmMain
         Me.tabMorning2.Controls.Add(Me.txtMorning2)
         Me.tabMorning2.Location = New System.Drawing.Point(4, 22)
         Me.tabMorning2.Name = "tabMorning2"
-        Me.tabMorning2.Size = New System.Drawing.Size(310, 343)
+        Me.tabMorning2.Size = New System.Drawing.Size(313, 343)
         Me.tabMorning2.TabIndex = 1
         Me.tabMorning2.Text = "Empty"
         Me.tabMorning2.UseVisualStyleBackColor = True
@@ -625,7 +619,7 @@ Partial Class FrmMain
         Me.txtMorning2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtMorning2.Location = New System.Drawing.Point(0, 0)
         Me.txtMorning2.Name = "txtMorning2"
-        Me.txtMorning2.Size = New System.Drawing.Size(310, 343)
+        Me.txtMorning2.Size = New System.Drawing.Size(313, 343)
         Me.txtMorning2.TabIndex = 0
         Me.txtMorning2.Text = ""
         '
@@ -634,7 +628,7 @@ Partial Class FrmMain
         Me.tabMorning3.Controls.Add(Me.txtMorning3)
         Me.tabMorning3.Location = New System.Drawing.Point(4, 22)
         Me.tabMorning3.Name = "tabMorning3"
-        Me.tabMorning3.Size = New System.Drawing.Size(310, 343)
+        Me.tabMorning3.Size = New System.Drawing.Size(313, 343)
         Me.tabMorning3.TabIndex = 2
         Me.tabMorning3.Text = "Empty"
         Me.tabMorning3.UseVisualStyleBackColor = True
@@ -644,7 +638,7 @@ Partial Class FrmMain
         Me.txtMorning3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtMorning3.Location = New System.Drawing.Point(0, 0)
         Me.txtMorning3.Name = "txtMorning3"
-        Me.txtMorning3.Size = New System.Drawing.Size(310, 343)
+        Me.txtMorning3.Size = New System.Drawing.Size(313, 343)
         Me.txtMorning3.TabIndex = 0
         Me.txtMorning3.Text = ""
         '
@@ -653,7 +647,7 @@ Partial Class FrmMain
         Me.tabMorning4.Controls.Add(Me.txtMorning4)
         Me.tabMorning4.Location = New System.Drawing.Point(4, 22)
         Me.tabMorning4.Name = "tabMorning4"
-        Me.tabMorning4.Size = New System.Drawing.Size(310, 343)
+        Me.tabMorning4.Size = New System.Drawing.Size(313, 343)
         Me.tabMorning4.TabIndex = 3
         Me.tabMorning4.Text = "Empty"
         Me.tabMorning4.UseVisualStyleBackColor = True
@@ -663,7 +657,7 @@ Partial Class FrmMain
         Me.txtMorning4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtMorning4.Location = New System.Drawing.Point(0, 0)
         Me.txtMorning4.Name = "txtMorning4"
-        Me.txtMorning4.Size = New System.Drawing.Size(310, 343)
+        Me.txtMorning4.Size = New System.Drawing.Size(313, 343)
         Me.txtMorning4.TabIndex = 0
         Me.txtMorning4.Text = ""
         '
@@ -672,7 +666,7 @@ Partial Class FrmMain
         Me.lblMorning.AutoSize = True
         Me.lblMorning.BackColor = System.Drawing.Color.Transparent
         Me.lblMorning.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMorning.Location = New System.Drawing.Point(87, 0)
+        Me.lblMorning.Location = New System.Drawing.Point(90, 1)
         Me.lblMorning.Name = "lblMorning"
         Me.lblMorning.Size = New System.Drawing.Size(149, 32)
         Me.lblMorning.TabIndex = 4
@@ -682,9 +676,9 @@ Partial Class FrmMain
         '
         Me.Panel2.Controls.Add(Me.TabControlAfternoon)
         Me.Panel2.Controls.Add(Me.lblAfternoon)
-        Me.Panel2.Location = New System.Drawing.Point(670, 199)
+        Me.Panel2.Location = New System.Drawing.Point(669, 199)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(324, 400)
+        Me.Panel2.Size = New System.Drawing.Size(329, 400)
         Me.Panel2.TabIndex = 3
         '
         'TabControlAfternoon
@@ -693,10 +687,10 @@ Partial Class FrmMain
         Me.TabControlAfternoon.Controls.Add(Me.tabAfternoon2)
         Me.TabControlAfternoon.Controls.Add(Me.tabAfternoon3)
         Me.TabControlAfternoon.Controls.Add(Me.tabAfternoon4)
-        Me.TabControlAfternoon.Location = New System.Drawing.Point(3, 28)
+        Me.TabControlAfternoon.Location = New System.Drawing.Point(3, 27)
         Me.TabControlAfternoon.Name = "TabControlAfternoon"
         Me.TabControlAfternoon.SelectedIndex = 0
-        Me.TabControlAfternoon.Size = New System.Drawing.Size(318, 369)
+        Me.TabControlAfternoon.Size = New System.Drawing.Size(322, 369)
         Me.TabControlAfternoon.TabIndex = 6
         '
         'tabAfternoon1
@@ -704,7 +698,7 @@ Partial Class FrmMain
         Me.tabAfternoon1.Controls.Add(Me.txtAfternoon1)
         Me.tabAfternoon1.Location = New System.Drawing.Point(4, 22)
         Me.tabAfternoon1.Name = "tabAfternoon1"
-        Me.tabAfternoon1.Size = New System.Drawing.Size(310, 343)
+        Me.tabAfternoon1.Size = New System.Drawing.Size(314, 343)
         Me.tabAfternoon1.TabIndex = 0
         Me.tabAfternoon1.Text = "Evening Log"
         Me.tabAfternoon1.UseVisualStyleBackColor = True
@@ -714,7 +708,7 @@ Partial Class FrmMain
         Me.txtAfternoon1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtAfternoon1.Location = New System.Drawing.Point(0, 0)
         Me.txtAfternoon1.Name = "txtAfternoon1"
-        Me.txtAfternoon1.Size = New System.Drawing.Size(310, 343)
+        Me.txtAfternoon1.Size = New System.Drawing.Size(314, 343)
         Me.txtAfternoon1.TabIndex = 0
         Me.txtAfternoon1.Text = ""
         '
@@ -723,7 +717,7 @@ Partial Class FrmMain
         Me.tabAfternoon2.Controls.Add(Me.txtAfternoon2)
         Me.tabAfternoon2.Location = New System.Drawing.Point(4, 22)
         Me.tabAfternoon2.Name = "tabAfternoon2"
-        Me.tabAfternoon2.Size = New System.Drawing.Size(310, 343)
+        Me.tabAfternoon2.Size = New System.Drawing.Size(314, 343)
         Me.tabAfternoon2.TabIndex = 1
         Me.tabAfternoon2.Text = "Empty"
         Me.tabAfternoon2.UseVisualStyleBackColor = True
@@ -733,7 +727,7 @@ Partial Class FrmMain
         Me.txtAfternoon2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtAfternoon2.Location = New System.Drawing.Point(0, 0)
         Me.txtAfternoon2.Name = "txtAfternoon2"
-        Me.txtAfternoon2.Size = New System.Drawing.Size(310, 343)
+        Me.txtAfternoon2.Size = New System.Drawing.Size(314, 343)
         Me.txtAfternoon2.TabIndex = 0
         Me.txtAfternoon2.Text = ""
         '
@@ -742,7 +736,7 @@ Partial Class FrmMain
         Me.tabAfternoon3.Controls.Add(Me.txtAfternoon3)
         Me.tabAfternoon3.Location = New System.Drawing.Point(4, 22)
         Me.tabAfternoon3.Name = "tabAfternoon3"
-        Me.tabAfternoon3.Size = New System.Drawing.Size(310, 343)
+        Me.tabAfternoon3.Size = New System.Drawing.Size(314, 343)
         Me.tabAfternoon3.TabIndex = 2
         Me.tabAfternoon3.Text = "Empty"
         Me.tabAfternoon3.UseVisualStyleBackColor = True
@@ -752,7 +746,7 @@ Partial Class FrmMain
         Me.txtAfternoon3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtAfternoon3.Location = New System.Drawing.Point(0, 0)
         Me.txtAfternoon3.Name = "txtAfternoon3"
-        Me.txtAfternoon3.Size = New System.Drawing.Size(310, 343)
+        Me.txtAfternoon3.Size = New System.Drawing.Size(314, 343)
         Me.txtAfternoon3.TabIndex = 0
         Me.txtAfternoon3.Text = ""
         '
@@ -761,7 +755,7 @@ Partial Class FrmMain
         Me.tabAfternoon4.Controls.Add(Me.txtAfternoon4)
         Me.tabAfternoon4.Location = New System.Drawing.Point(4, 22)
         Me.tabAfternoon4.Name = "tabAfternoon4"
-        Me.tabAfternoon4.Size = New System.Drawing.Size(310, 343)
+        Me.tabAfternoon4.Size = New System.Drawing.Size(314, 343)
         Me.tabAfternoon4.TabIndex = 3
         Me.tabAfternoon4.Text = "Empty"
         Me.tabAfternoon4.UseVisualStyleBackColor = True
@@ -771,7 +765,7 @@ Partial Class FrmMain
         Me.txtAfternoon4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtAfternoon4.Location = New System.Drawing.Point(0, 0)
         Me.txtAfternoon4.Name = "txtAfternoon4"
-        Me.txtAfternoon4.Size = New System.Drawing.Size(310, 343)
+        Me.txtAfternoon4.Size = New System.Drawing.Size(314, 343)
         Me.txtAfternoon4.TabIndex = 0
         Me.txtAfternoon4.Text = ""
         '
@@ -781,7 +775,7 @@ Partial Class FrmMain
         Me.lblAfternoon.BackColor = System.Drawing.Color.Transparent
         Me.lblAfternoon.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblAfternoon.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblAfternoon.Location = New System.Drawing.Point(81, 1)
+        Me.lblAfternoon.Location = New System.Drawing.Point(78, 1)
         Me.lblAfternoon.Name = "lblAfternoon"
         Me.lblAfternoon.Size = New System.Drawing.Size(164, 32)
         Me.lblAfternoon.TabIndex = 5
@@ -868,16 +862,6 @@ Partial Class FrmMain
         '
         Me.afternoonTimer4.Interval = 5000
         '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(12, 13)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(18, 16)
-        Me.Label9.TabIndex = 7
-        Me.Label9.Text = "#:"
-        '
         'FrmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -886,8 +870,12 @@ Partial Class FrmMain
         Me.ControlBox = False
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.MenuStrip)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.ImeMode = System.Windows.Forms.ImeMode.Off
         Me.MainMenuStrip = Me.MenuStrip
+        Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(1024, 700)
+        Me.MinimizeBox = False
         Me.MinimumSize = New System.Drawing.Size(1024, 700)
         Me.Name = "FrmMain"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -960,6 +948,13 @@ Partial Class FrmMain
     Friend WithEvents tabNight3 As TabPage
     Friend WithEvents tabNight4 As TabPage
     Friend WithEvents lblOvernight As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents TabControlMorning As TabControl
+    Friend WithEvents tabMorning1 As TabPage
+    Friend WithEvents tabMorning2 As TabPage
+    Friend WithEvents tabMorning3 As TabPage
+    Friend WithEvents tabMorning4 As TabPage
+    Friend WithEvents lblMorning As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents TabControlAfternoon As TabControl
     Friend WithEvents tabAfternoon1 As TabPage
@@ -973,6 +968,10 @@ Partial Class FrmMain
     Friend WithEvents txtNight2 As RichTextBox
     Friend WithEvents txtNight3 As RichTextBox
     Friend WithEvents txtNight4 As RichTextBox
+    Friend WithEvents txtMorning1 As RichTextBox
+    Friend WithEvents txtMorning2 As RichTextBox
+    Friend WithEvents txtMorning3 As RichTextBox
+    Friend WithEvents txtMorning4 As RichTextBox
     Friend WithEvents txtAfternoon1 As RichTextBox
     Friend WithEvents txtAfternoon2 As RichTextBox
     Friend WithEvents txtAfternoon3 As RichTextBox
@@ -1009,16 +1008,4 @@ Partial Class FrmMain
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents menuStripResProfileManager As ToolStripMenuItem
     Friend WithEvents menuStripAbout As ToolStripMenuItem
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents TabControlMorning As TabControl
-    Friend WithEvents tabMorning1 As TabPage
-    Friend WithEvents tabMorning2 As TabPage
-    Friend WithEvents txtMorning2 As RichTextBox
-    Friend WithEvents tabMorning3 As TabPage
-    Friend WithEvents txtMorning3 As RichTextBox
-    Friend WithEvents tabMorning4 As TabPage
-    Friend WithEvents txtMorning4 As RichTextBox
-    Friend WithEvents lblMorning As Label
-    Friend WithEvents txtMorning1 As RichTextBox
-    Friend WithEvents Label9 As Label
 End Class
